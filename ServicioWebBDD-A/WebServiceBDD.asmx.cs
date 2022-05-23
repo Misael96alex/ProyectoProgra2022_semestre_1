@@ -23,7 +23,10 @@ namespace ServicioWebBDD_A
         String usuario;
         String password;
         String CadenaConexion;
-
+         /*hola kevin
+          en este momento estoy trabajando la parte del htm (index)
+          si gustas anda metiendo tus select, insert, delete, update de tus tablas aqui en este archivo
+         */
         public WebServiceBDD()
         {
             servidor = "localhost";

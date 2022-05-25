@@ -23,10 +23,7 @@ namespace ServicioWebBDD_A
         String usuario;
         String password;
         String CadenaConexion;
-         /*hola kevin
-          en este momento estoy trabajando la parte del htm (index)
-          si gustas anda metiendo tus select, insert, delete, update de tus tablas aqui en este archivo
-         */
+         
         public WebServiceBDD()
         {
             servidor = "localhost";
@@ -37,18 +34,74 @@ namespace ServicioWebBDD_A
         }
 
         [WebMethod]
-        public DataSet WSselect()
+        public DataSet WSselect_Usuario()
         {
+            
             MySqlConnection conn = new MySqlConnection();
             conn.ConnectionString = CadenaConexion;
             MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM usuario;",conn);
             DataSet ds = new DataSet();
             da.Fill(ds);
             return ds;
+            
         }
 
         [WebMethod]
-        public String WSinsertUsuario(int id_usuario, int id_clinica, string nombre_usuario, string apellido_usuario, string fecha_nac, string dpi, int nit, string direccion, string correo, int no_telelefono)
+        public bool WSValidar_Usuario(int id, int contrasena)
+        {
+            String id_ = "" + id;
+            String contrasena_ = "" + contrasena;
+            MySqlConnection conn = new MySqlConnection();
+            conn.ConnectionString = CadenaConexion;
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM usuario where id_usuario = " + id_ + " and contrasena = " +
+                contrasena_ + "; ", conn);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            int num = ds.Tables[0].Rows.Count;
+            if (num == 1)
+            {
+                return true;
+            } else
+            {
+                return false;
+            }
+
+        }
+
+        [WebMethod]
+        public DataSet WSValidar_Usuario1(int id, int contrasena)
+        {
+            String id_ = "" + id;
+            String contrasena_ = "" + contrasena;
+            MySqlConnection conn = new MySqlConnection();
+            conn.ConnectionString = CadenaConexion;
+            MySqlDataAdapter da = new MySqlDataAdapter( "SELECT * FROM usuario where id_usuario = " + id_ + " and contrasena = " +
+                contrasena_ + "; ", conn);
+            
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+
+        }
+        [WebMethod]
+        public int WSValidar_Usuario2(int id, int contrasena)
+        {
+            String id_ = "" + id;
+            String contrasena_ = "" + contrasena;
+            MySqlConnection conn = new MySqlConnection();
+            conn.ConnectionString = CadenaConexion;
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM usuario where id_usuario = " + id_ + " and contrasena = " +
+                contrasena_ + "; ", conn);
+
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            int num = ds.Tables[0].Rows.Count;
+            return num;
+
+        }
+
+        [WebMethod]
+        public String WSinsert_Usuario(int id_usuario, int id_clinica, string nombre_usuario, string apellido_usuario, string fecha_nac, string dpi, int nit, string direccion, string correo, int no_telelefono)
         {
             try
             {
@@ -69,7 +122,7 @@ namespace ServicioWebBDD_A
         }
 
         [WebMethod]
-        public String WSinsertClinica(int id_clinica, string nombre_clinica,string direccion, string correo, int no_telelefono, int nit)
+        public String WSinsert_Clinica(int id_clinica, string nombre_clinica,string direccion, string correo, int no_telelefono, int nit)
         {
             try
             {
@@ -91,27 +144,19 @@ namespace ServicioWebBDD_A
         }
 
         [WebMethod]
-        public string HelloWorld()
+        public void WSBorrar_Clinica(int id_clinica)
         {
-            return "Hola a todos";
+            MySqlConnection conn = new MySqlConnection();
+            conn.ConnectionString = CadenaConexion;
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.CommandType = System.Data.CommandType.Text;
+            cmd.CommandText = "delete from clinica where id_clinica = " + id_clinica;
+            cmd.Connection = conn;
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
         }
 
-        [WebMethod]
-        public string Suma(int a, int b)
-        {
-            return "La suma es: "+ (a+b);
-        }
-        [WebMethod]
-        public string Dividir(int a, int b)
-        {
-            try { 
-            float resul;
-            resul = a / b;
-            return "La division es: " + (resul);
-            }
-            catch (Exception e) {
-                return "error: " + e.Message;
-            }
-        }
     }
 }

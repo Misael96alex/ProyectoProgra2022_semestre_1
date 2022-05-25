@@ -12,7 +12,10 @@ namespace ConsumeServicio
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            WservicioBDD.WebServiceBDDSoapClient ws = new WservicioBDD.WebServiceBDDSoapClient();
+            DataSet ds = ws.WSselect_Usuario();
+            GridView1.DataSource = ds.Tables[0];
+            GridView1.DataBind();
         }
     }
 }

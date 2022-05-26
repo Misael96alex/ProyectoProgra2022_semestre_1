@@ -17,8 +17,8 @@ namespace ConsumeServicio.Paginas
                 WservicioBDD.WebServiceBDDSoapClient ws = new WservicioBDD.WebServiceBDDSoapClient();
                 DataSet ds1 = ws.WSselect_Clinica();
                 clinica.DataSource = ds1;
-                clinica.DataTextField = "nombre_clinica";
-                clinica.DataValueField = "id_clinica";
+                clinica.DataTextField = "CLINICA";
+                clinica.DataValueField = "ID";
                 clinica.DataBind();
             }
         }

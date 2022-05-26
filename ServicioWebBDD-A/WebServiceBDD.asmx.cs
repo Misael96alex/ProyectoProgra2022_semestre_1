@@ -174,8 +174,7 @@ namespace ServicioWebBDD_A
 
             MySqlConnection conn = new MySqlConnection();
             conn.ConnectionString = CadenaConexion;
-            MySqlDataAdapter da = new MySqlDataAdapter("SELECT cl.id_clinica, cl.nombre_clinica, cl.direccion, cl.correo, cl.no_telelefono"+
-                ", cl.nit FROM clinica cl; ", conn);
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT cl.id_clinica ID, cl.nombre_clinica CLINICA, cl.direccion DIRECCION, cl.correo CORREO, cl.no_telelefono TELEFONO, cl.nit NIT FROM clinica cl;  ", conn);
             DataSet ds = new DataSet();
             da.Fill(ds);
             return ds;

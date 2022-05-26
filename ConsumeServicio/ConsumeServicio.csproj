@@ -69,6 +69,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="PaginasClinica\agregarClinica.aspx" />
+    <Content Include="PaginasClinica\agregarClinica.css" />
+    <Content Include="PaginasClinica\menuClinica.aspx" />
+    <Content Include="PaginasClinica\menuClinica.css" />
     <Content Include="PaginasUsuario\agregarUsuario.css" />
     <Content Include="PaginasUsuario\borrarUsuario.aspx" />
     <Content Include="PaginasUsuario\borrarUsuario.css" />
@@ -96,6 +100,20 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="PaginasClinica\agregarClinica.aspx.cs">
+      <DependentUpon>agregarClinica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginasClinica\agregarClinica.aspx.designer.cs">
+      <DependentUpon>agregarClinica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginasClinica\menuClinica.aspx.cs">
+      <DependentUpon>menuClinica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginasClinica\menuClinica.aspx.designer.cs">
+      <DependentUpon>menuClinica.aspx</DependentUpon>
     </Compile>
     <Compile Include="PaginasUsuario\borrarUsuario.aspx.cs">
       <DependentUpon>borrarUsuario.aspx</DependentUpon>

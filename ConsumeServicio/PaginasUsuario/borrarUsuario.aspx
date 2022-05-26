@@ -19,9 +19,7 @@
 		<nav>
 			<ul>
 				<li><a href="https://localhost:44321/PaginasUsuario/menuUsuario.aspx">Usuarios</a></li>
-				<li><a href="#">Clinicas</a></li>
-				<li><a href="#">Medicamentos</a></li>
-                <li><a href="#">Enfermedades</a></li>
+				
 			</ul>
 		</nav><!-- / nav -->
 

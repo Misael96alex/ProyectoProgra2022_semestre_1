@@ -19,9 +19,7 @@
 		<nav>
 			<ul>
 				<li><a href="https://localhost:44321/PaginasUsuario/menuUsuario.aspx">Usuarios</a></li>
-				<li><a href="#">Clinicas</a></li>
-				<li><a href="#">Medicamentos</a></li>
-                <li><a href="#">Enfermedades</a></li>
+				
 			</ul>
 		</nav><!-- / nav -->
 
@@ -33,7 +31,7 @@
 			<center>
 			<div class="agregar">
 				<asp:TextBox ID="idBuscar" runat="server" placeholder="Id a Buscar" ></asp:TextBox>
-				<asp:Button ID="verificar" class="botones btn" runat="server" Text="Verificar" Width="288px" OnClick="verificar_Click1"   />
+				<asp:Button ID="verificar" class="botones btn" runat="server" Text="Verificar" Width="288px" OnClick="verificar_Click"   />
 				
 			    
 			</div>

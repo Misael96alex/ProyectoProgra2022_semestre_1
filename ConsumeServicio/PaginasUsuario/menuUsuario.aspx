@@ -46,7 +46,7 @@
         <div class="botones">
             <center>
             <asp:Button ID="Agregar" class="btn" runat="server" Text="Agregar" OnClick="Agregar_Click" />
-            <asp:Button ID="Eliminar" class="btn" runat="server" Text="Eliminar" />
+            <asp:Button ID="Eliminar" class="btn" runat="server" Text="Eliminar" OnClick="Eliminar_Click" />
             <asp:Button ID="Modificar" class="btn" runat="server" Text="Modificar" OnClick="Modificar_Click" />
             <asp:Button ID="Buscar" class="btn" runat="server" Text="Buscar" OnClick="Buscar_Click" />
             </center>

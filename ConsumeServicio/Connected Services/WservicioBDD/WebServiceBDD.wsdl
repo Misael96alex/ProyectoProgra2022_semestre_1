@@ -119,6 +119,16 @@
       <s:element name="Actualizar_UsuarioResponse">
         <s:complexType />
       </s:element>
+      <s:element name="WSBorrarUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_usuario" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSBorrarUsuarioResponse">
+        <s:complexType />
+      </s:element>
       <s:element name="WSselect_Clinica">
         <s:complexType />
       </s:element>
@@ -218,6 +228,12 @@
   <wsdl:message name="Actualizar_UsuarioSoapOut">
     <wsdl:part name="parameters" element="tns:Actualizar_UsuarioResponse" />
   </wsdl:message>
+  <wsdl:message name="WSBorrarUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:WSBorrarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="WSBorrarUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:WSBorrarUsuarioResponse" />
+  </wsdl:message>
   <wsdl:message name="WSselect_ClinicaSoapIn">
     <wsdl:part name="parameters" element="tns:WSselect_Clinica" />
   </wsdl:message>
@@ -266,6 +282,10 @@
     <wsdl:operation name="Actualizar_Usuario">
       <wsdl:input message="tns:Actualizar_UsuarioSoapIn" />
       <wsdl:output message="tns:Actualizar_UsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSBorrarUsuario">
+      <wsdl:input message="tns:WSBorrarUsuarioSoapIn" />
+      <wsdl:output message="tns:WSBorrarUsuarioSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="WSselect_Clinica">
       <wsdl:input message="tns:WSselect_ClinicaSoapIn" />
@@ -333,6 +353,15 @@
     </wsdl:operation>
     <wsdl:operation name="Actualizar_Usuario">
       <soap:operation soapAction="http://tempuri.org/Actualizar_Usuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSBorrarUsuario">
+      <soap:operation soapAction="http://tempuri.org/WSBorrarUsuario" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -426,6 +455,15 @@
     </wsdl:operation>
     <wsdl:operation name="Actualizar_Usuario">
       <soap12:operation soapAction="http://tempuri.org/Actualizar_Usuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSBorrarUsuario">
+      <soap12:operation soapAction="http://tempuri.org/WSBorrarUsuario" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

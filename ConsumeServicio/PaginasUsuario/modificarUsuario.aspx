@@ -33,7 +33,8 @@
 			<center>
 			<div class="agregar">
 				<asp:TextBox ID="idBuscar" runat="server" placeholder="Id a Buscar" ></asp:TextBox>
-				<asp:Button ID="verificar" class="botones btn" runat="server" Text="Verificar" Width="288px" OnClick="verificar_Click"  />
+				<asp:Button ID="verificar" class="botones btn" runat="server" Text="Verificar" Width="288px" OnClick="verificar_Click1"   />
+				
 			    
 			</div>
 				<asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">

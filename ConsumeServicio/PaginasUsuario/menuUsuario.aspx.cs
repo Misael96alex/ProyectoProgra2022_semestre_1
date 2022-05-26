@@ -32,5 +32,10 @@ namespace ConsumeServicio
         {
             Response.Redirect("https://localhost:44321/PaginasUsuario/buscarUsuario.aspx");
         }
+
+        protected void Eliminar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("https://localhost:44321/PaginasUsuario/borrarUsuario.aspx");
+        }
     }
 }

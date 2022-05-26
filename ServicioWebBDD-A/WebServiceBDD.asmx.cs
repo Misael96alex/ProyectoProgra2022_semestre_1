@@ -146,6 +146,22 @@ namespace ServicioWebBDD_A
 
         }
 
+        [WebMethod]
+        public void WSBorrarUsuario(int id_usuario)
+        {
+            MySqlConnection conn = new MySqlConnection();
+            conn.ConnectionString = CadenaConexion;
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.CommandType = System.Data.CommandType.Text;
+            cmd.CommandText = "DELETE FROM usuario WHERE id_usuario = '" + id_usuario + "';";
+            cmd.Connection = conn;
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+        }
+
+
         /*
          * **********************************************
          * *                CLINICA                   * *

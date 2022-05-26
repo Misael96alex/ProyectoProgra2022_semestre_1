@@ -54,5 +54,7 @@ namespace ConsumeServicio.PaginasUsuario
             telefono.Text = "";
             contrasena.Text = "";
         }
+
+        
     }
 }

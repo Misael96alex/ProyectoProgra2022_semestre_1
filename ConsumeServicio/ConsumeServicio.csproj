@@ -70,6 +70,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="PaginasUsuario\agregarUsuario.css" />
+    <Content Include="PaginasUsuario\borrarUsuario.aspx" />
+    <Content Include="PaginasUsuario\borrarUsuario.css" />
     <Content Include="PaginasUsuario\buscarUsuario.aspx" />
     <Content Include="PaginasUsuario\buscarUsuario.css" />
     <Content Include="PaginasUsuario\login.aspx" />
@@ -94,6 +96,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="PaginasUsuario\borrarUsuario.aspx.cs">
+      <DependentUpon>borrarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginasUsuario\borrarUsuario.aspx.designer.cs">
+      <DependentUpon>borrarUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="PaginasUsuario\buscarUsuario.aspx.cs">
       <DependentUpon>buscarUsuario.aspx</DependentUpon>

@@ -58,6 +58,13 @@ namespace ConsumeServicio.WservicioBDD {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Actualizar_Usuario", ReplyAction="*")]
         System.Threading.Tasks.Task Actualizar_UsuarioAsync(int id_usuario, int id_clinica, string nombre_usuario, string apellido_usuario, string fecha_nac, string dpi, int nit, string direccion, string correo, int no_telelefono, int contrasena);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSBorrarUsuario", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void WSBorrarUsuario(int id_usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSBorrarUsuario", ReplyAction="*")]
+        System.Threading.Tasks.Task WSBorrarUsuarioAsync(int id_usuario);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSselect_Clinica", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Data.DataSet WSselect_Clinica();
@@ -160,6 +167,14 @@ namespace ConsumeServicio.WservicioBDD {
         
         public System.Threading.Tasks.Task Actualizar_UsuarioAsync(int id_usuario, int id_clinica, string nombre_usuario, string apellido_usuario, string fecha_nac, string dpi, int nit, string direccion, string correo, int no_telelefono, int contrasena) {
             return base.Channel.Actualizar_UsuarioAsync(id_usuario, id_clinica, nombre_usuario, apellido_usuario, fecha_nac, dpi, nit, direccion, correo, no_telelefono, contrasena);
+        }
+        
+        public void WSBorrarUsuario(int id_usuario) {
+            base.Channel.WSBorrarUsuario(id_usuario);
+        }
+        
+        public System.Threading.Tasks.Task WSBorrarUsuarioAsync(int id_usuario) {
+            return base.Channel.WSBorrarUsuarioAsync(id_usuario);
         }
         
         public System.Data.DataSet WSselect_Clinica() {

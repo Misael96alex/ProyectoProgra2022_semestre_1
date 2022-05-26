@@ -33,13 +33,21 @@ namespace ServicioWebBDD_A
             CadenaConexion = "server = " + servidor+"; port=3306; User Id="+usuario+"; Password="+password+"; database="+bd+";";
         }
 
+        /*
+         * **********************************************
+         * *                USUARIO                   * *
+         * **********************************************
+         * */
+
         [WebMethod]
         public DataSet WSselect_Usuario()
         {
             
             MySqlConnection conn = new MySqlConnection();
             conn.ConnectionString = CadenaConexion;
-            MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM usuario;",conn);
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT u.id_usuario as ID,CONCAT(u.nombre_usuario, ' ', u.apellido_usuario) as 'NOMBRE_USUARIO', cl.nombre_clinica as CLINICA" +
+                ", date_format(u.fecha_nac, "+"'%d/%m/%Y'"+") as FECHA_NACIMIENTO, u.dpi as DPI, u.nit as NIT, u.direccion as DIRECCION_USUARIO"+
+                ", u.correo as CORREO, u.no_telelefono as TELEFONO FROM usuario u JOIN clinica cl on u.id_clinica = cl.id_clinica; ",conn);
             DataSet ds = new DataSet();
             da.Fill(ds);
             return ds;
@@ -53,7 +61,9 @@ namespace ServicioWebBDD_A
             String contrasena_ = "" + contrasena;
             MySqlConnection conn = new MySqlConnection();
             conn.ConnectionString = CadenaConexion;
-            MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM usuario where id_usuario = " + id_ + " and contrasena = " +
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT u.id_usuario as ID,CONCAT(u.nombre_usuario, ' ', u.apellido_usuario) as 'NOMBRE_USUARIO', cl.nombre_clinica as CLINICA" +
+                ", date_format(u.fecha_nac, " + "'%d/%m/%Y'" + ") as FECHA_NACIMIENTO, u.dpi as DPI, u.nit as NIT, u.direccion as DIRECCION_USUARIO" +
+                ", u.correo as CORREO, u.no_telelefono as TELEFONO, u.contrasena AS CONTRASEÑA FROM usuario u JOIN clinica cl on u.id_clinica = cl.id_clinica where id_usuario = " + id_ + " and contrasena = " +
                 contrasena_ + "; ", conn);
             DataSet ds = new DataSet();
             da.Fill(ds);
@@ -69,39 +79,39 @@ namespace ServicioWebBDD_A
         }
 
         [WebMethod]
-        public DataSet WSValidar_Usuario1(int id, int contrasena)
+        public DataSet WSBuscar_Usuario_ID(int id)
         {
             String id_ = "" + id;
-            String contrasena_ = "" + contrasena;
             MySqlConnection conn = new MySqlConnection();
             conn.ConnectionString = CadenaConexion;
-            MySqlDataAdapter da = new MySqlDataAdapter( "SELECT * FROM usuario where id_usuario = " + id_ + " and contrasena = " +
-                contrasena_ + "; ", conn);
-            
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT u.id_usuario as ID,CONCAT(u.nombre_usuario, ' ', u.apellido_usuario) as 'NOMBRE_USUARIO', cl.nombre_clinica as CLINICA" +
+                ", date_format(u.fecha_nac, " + "'%d/%m/%Y'" + ") as FECHA_NACIMIENTO, u.dpi as DPI, u.nit as NIT, u.direccion as DIRECCION_USUARIO" +
+                ", u.correo as CORREO, u.no_telelefono as TELEFONO, u.contrasena AS CONTRASEÑA FROM usuario u JOIN clinica cl on u.id_clinica = cl.id_clinica where id_usuario = " + id_ + " ; ", conn);
             DataSet ds = new DataSet();
             da.Fill(ds);
             return ds;
 
         }
+
         [WebMethod]
-        public int WSValidar_Usuario2(int id, int contrasena)
+        public DataSet WSBuscar_Usuario_ID_Nombre( String nombre)
         {
-            String id_ = "" + id;
-            String contrasena_ = "" + contrasena;
+            
             MySqlConnection conn = new MySqlConnection();
             conn.ConnectionString = CadenaConexion;
-            MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM usuario where id_usuario = " + id_ + " and contrasena = " +
-                contrasena_ + "; ", conn);
-
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT distinct u.id_usuario as ID,CONCAT(u.nombre_usuario, ' ', u.apellido_usuario) as 'NOMBRE_USUARIO', cl.nombre_clinica as CLINICA" +
+                ", date_format(u.fecha_nac, " + "'%d/%m/%Y'" + ") as FECHA_NACIMIENTO, u.dpi as DPI, u.nit as NIT, u.direccion as DIRECCION_USUARIO" +
+                ", u.correo as CORREO, u.no_telelefono as TELEFONO, u.contrasena AS CONTRASEÑA FROM usuario u JOIN clinica cl on u.id_clinica = cl.id_clinica where   CONCAT(u.nombre_usuario, ' ', u.apellido_usuario) like  '%"+ nombre+ "%' ;", conn);
             DataSet ds = new DataSet();
             da.Fill(ds);
-            int num = ds.Tables[0].Rows.Count;
-            return num;
+            return ds;
 
         }
 
+
+
         [WebMethod]
-        public String WSinsert_Usuario(int id_usuario, int id_clinica, string nombre_usuario, string apellido_usuario, string fecha_nac, string dpi, int nit, string direccion, string correo, int no_telelefono)
+        public String WSinsert_Usuario( int id_clinica, string nombre_usuario, string apellido_usuario, string fecha_nac, string dpi, int nit, string direccion, string correo, int no_telelefono, int contrasena)
         {
             try
             {
@@ -109,7 +119,7 @@ namespace ServicioWebBDD_A
                 conn.ConnectionString = CadenaConexion;
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.CommandText = "insert into usuario(id_usuario,id_clinica,nombre_usuario,apellido_usuario,fecha_nac,dpi,nit,direccion,correo,no_telelefono)values('" + id_usuario + "','" + id_clinica + "','" + nombre_usuario + "','" + apellido_usuario + "','" + fecha_nac + "','" + dpi + "','" + nit + "','" + direccion + "','" + correo + "','" + no_telelefono + "')";
+                cmd.CommandText = "insert into usuario(id_clinica,nombre_usuario,apellido_usuario,fecha_nac,dpi,nit,direccion,correo,no_telelefono,contrasena)values('" + id_clinica + "','" + nombre_usuario + "','" + apellido_usuario + "','" + fecha_nac + "','" + dpi + "','" + nit + "','" + direccion + "','" + correo + "','" + no_telelefono + "','" + contrasena + "')";
                 cmd.Connection = conn;
                 conn.Open();
                 cmd.ExecuteNonQuery();
@@ -119,6 +129,41 @@ namespace ServicioWebBDD_A
             {
                 return "error: " + e.Message;
             }
+        }
+
+        [WebMethod]
+        public void Actualizar_Usuario(int id_usuario, int id_clinica, string nombre_usuario, string apellido_usuario, string fecha_nac, string dpi, int nit, string direccion, string correo, int no_telelefono, int contrasena)
+        {
+            MySqlConnection conn = new MySqlConnection();
+            conn.ConnectionString = CadenaConexion;
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.CommandType = System.Data.CommandType.Text;
+            cmd.CommandText = "update usuario set id_clinica = '"+ id_clinica+"' ,nombre_usuario = '" + nombre_usuario + "' , apellido_usuario = '" + apellido_usuario + "' , fecha_nac = '" + fecha_nac + "' ,dpi = '" + dpi + "' ,nit ='" + nit + "' ,direccion = '" + direccion + "' ,correo = '" + correo + "' ,no_telelefono = '" + no_telelefono + "', contrasena = '"+contrasena+"' where id_usuario ='" + id_usuario+"'";
+            cmd.Connection = conn;
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+        }
+
+        /*
+         * **********************************************
+         * *                CLINICA                   * *
+         * **********************************************
+         * */
+
+        [WebMethod]
+        public DataSet WSselect_Clinica()
+        {
+
+            MySqlConnection conn = new MySqlConnection();
+            conn.ConnectionString = CadenaConexion;
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT cl.id_clinica, cl.nombre_clinica, cl.direccion, cl.correo, cl.no_telelefono"+
+                ", cl.nit FROM clinica cl; ", conn);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+
         }
 
         [WebMethod]
@@ -151,6 +196,21 @@ namespace ServicioWebBDD_A
             MySqlCommand cmd = new MySqlCommand();
             cmd.CommandType = System.Data.CommandType.Text;
             cmd.CommandText = "delete from clinica where id_clinica = " + id_clinica;
+            cmd.Connection = conn;
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+        }
+
+        [WebMethod]
+        public void WSActualizar_Clinica(int id_clinica, string nombre_clinica, string direccion, string correo, int no_telelefono, int nit)
+        {
+            MySqlConnection conn = new MySqlConnection();
+            conn.ConnectionString = CadenaConexion;
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.CommandType = System.Data.CommandType.Text;
+            cmd.CommandText = "update clinica set nombre_clinica = '" + nombre_clinica + "' , direccion = '" + direccion + "' , correo = '" + correo + "' , no_telelefono = '" + no_telelefono + "' ,nit ='" + nit + "' where id_clinica =" + id_clinica;
             cmd.Connection = conn;
             conn.Open();
             cmd.ExecuteNonQuery();

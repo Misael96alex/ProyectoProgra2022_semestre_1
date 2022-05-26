@@ -34,18 +34,17 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="WSValidar_Usuario1">
+      <s:element name="WSBuscar_Usuario_ID">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="contrasena" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="WSValidar_Usuario1Response">
+      <s:element name="WSBuscar_Usuario_IDResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="WSValidar_Usuario1Result">
+            <s:element minOccurs="0" maxOccurs="1" name="WSBuscar_Usuario_IDResult">
               <s:complexType>
                 <s:sequence>
                   <s:element ref="s:schema" />
@@ -56,22 +55,51 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="WSValidar_Usuario2">
+      <s:element name="WSBuscar_Usuario_ID_Nombre">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="contrasena" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="WSValidar_Usuario2Response">
+      <s:element name="WSBuscar_Usuario_ID_NombreResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="WSValidar_Usuario2Result" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="WSBuscar_Usuario_ID_NombreResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="WSinsert_Usuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_clinica" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre_usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apellido_usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fecha_nac" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dpi" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nit" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="direccion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="correo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="no_telelefono" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="contrasena" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSinsert_UsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSinsert_UsuarioResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Actualizar_Usuario">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="id_usuario" type="s:int" />
@@ -84,13 +112,27 @@
             <s:element minOccurs="0" maxOccurs="1" name="direccion" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="correo" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="no_telelefono" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="contrasena" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="WSinsert_UsuarioResponse">
+      <s:element name="Actualizar_UsuarioResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="WSselect_Clinica">
+        <s:complexType />
+      </s:element>
+      <s:element name="WSselect_ClinicaResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="WSinsert_UsuarioResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="WSselect_ClinicaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -123,6 +165,21 @@
       <s:element name="WSBorrar_ClinicaResponse">
         <s:complexType />
       </s:element>
+      <s:element name="WSActualizar_Clinica">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_clinica" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre_clinica" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="direccion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="correo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="no_telelefono" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nit" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSActualizar_ClinicaResponse">
+        <s:complexType />
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="WSselect_UsuarioSoapIn">
@@ -137,23 +194,35 @@
   <wsdl:message name="WSValidar_UsuarioSoapOut">
     <wsdl:part name="parameters" element="tns:WSValidar_UsuarioResponse" />
   </wsdl:message>
-  <wsdl:message name="WSValidar_Usuario1SoapIn">
-    <wsdl:part name="parameters" element="tns:WSValidar_Usuario1" />
+  <wsdl:message name="WSBuscar_Usuario_IDSoapIn">
+    <wsdl:part name="parameters" element="tns:WSBuscar_Usuario_ID" />
   </wsdl:message>
-  <wsdl:message name="WSValidar_Usuario1SoapOut">
-    <wsdl:part name="parameters" element="tns:WSValidar_Usuario1Response" />
+  <wsdl:message name="WSBuscar_Usuario_IDSoapOut">
+    <wsdl:part name="parameters" element="tns:WSBuscar_Usuario_IDResponse" />
   </wsdl:message>
-  <wsdl:message name="WSValidar_Usuario2SoapIn">
-    <wsdl:part name="parameters" element="tns:WSValidar_Usuario2" />
+  <wsdl:message name="WSBuscar_Usuario_ID_NombreSoapIn">
+    <wsdl:part name="parameters" element="tns:WSBuscar_Usuario_ID_Nombre" />
   </wsdl:message>
-  <wsdl:message name="WSValidar_Usuario2SoapOut">
-    <wsdl:part name="parameters" element="tns:WSValidar_Usuario2Response" />
+  <wsdl:message name="WSBuscar_Usuario_ID_NombreSoapOut">
+    <wsdl:part name="parameters" element="tns:WSBuscar_Usuario_ID_NombreResponse" />
   </wsdl:message>
   <wsdl:message name="WSinsert_UsuarioSoapIn">
     <wsdl:part name="parameters" element="tns:WSinsert_Usuario" />
   </wsdl:message>
   <wsdl:message name="WSinsert_UsuarioSoapOut">
     <wsdl:part name="parameters" element="tns:WSinsert_UsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="Actualizar_UsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:Actualizar_Usuario" />
+  </wsdl:message>
+  <wsdl:message name="Actualizar_UsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:Actualizar_UsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSselect_ClinicaSoapIn">
+    <wsdl:part name="parameters" element="tns:WSselect_Clinica" />
+  </wsdl:message>
+  <wsdl:message name="WSselect_ClinicaSoapOut">
+    <wsdl:part name="parameters" element="tns:WSselect_ClinicaResponse" />
   </wsdl:message>
   <wsdl:message name="WSinsert_ClinicaSoapIn">
     <wsdl:part name="parameters" element="tns:WSinsert_Clinica" />
@@ -167,6 +236,12 @@
   <wsdl:message name="WSBorrar_ClinicaSoapOut">
     <wsdl:part name="parameters" element="tns:WSBorrar_ClinicaResponse" />
   </wsdl:message>
+  <wsdl:message name="WSActualizar_ClinicaSoapIn">
+    <wsdl:part name="parameters" element="tns:WSActualizar_Clinica" />
+  </wsdl:message>
+  <wsdl:message name="WSActualizar_ClinicaSoapOut">
+    <wsdl:part name="parameters" element="tns:WSActualizar_ClinicaResponse" />
+  </wsdl:message>
   <wsdl:portType name="WebServiceBDDSoap">
     <wsdl:operation name="WSselect_Usuario">
       <wsdl:input message="tns:WSselect_UsuarioSoapIn" />
@@ -176,17 +251,25 @@
       <wsdl:input message="tns:WSValidar_UsuarioSoapIn" />
       <wsdl:output message="tns:WSValidar_UsuarioSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="WSValidar_Usuario1">
-      <wsdl:input message="tns:WSValidar_Usuario1SoapIn" />
-      <wsdl:output message="tns:WSValidar_Usuario1SoapOut" />
+    <wsdl:operation name="WSBuscar_Usuario_ID">
+      <wsdl:input message="tns:WSBuscar_Usuario_IDSoapIn" />
+      <wsdl:output message="tns:WSBuscar_Usuario_IDSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="WSValidar_Usuario2">
-      <wsdl:input message="tns:WSValidar_Usuario2SoapIn" />
-      <wsdl:output message="tns:WSValidar_Usuario2SoapOut" />
+    <wsdl:operation name="WSBuscar_Usuario_ID_Nombre">
+      <wsdl:input message="tns:WSBuscar_Usuario_ID_NombreSoapIn" />
+      <wsdl:output message="tns:WSBuscar_Usuario_ID_NombreSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="WSinsert_Usuario">
       <wsdl:input message="tns:WSinsert_UsuarioSoapIn" />
       <wsdl:output message="tns:WSinsert_UsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Actualizar_Usuario">
+      <wsdl:input message="tns:Actualizar_UsuarioSoapIn" />
+      <wsdl:output message="tns:Actualizar_UsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSselect_Clinica">
+      <wsdl:input message="tns:WSselect_ClinicaSoapIn" />
+      <wsdl:output message="tns:WSselect_ClinicaSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="WSinsert_Clinica">
       <wsdl:input message="tns:WSinsert_ClinicaSoapIn" />
@@ -195,6 +278,10 @@
     <wsdl:operation name="WSBorrar_Clinica">
       <wsdl:input message="tns:WSBorrar_ClinicaSoapIn" />
       <wsdl:output message="tns:WSBorrar_ClinicaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSActualizar_Clinica">
+      <wsdl:input message="tns:WSActualizar_ClinicaSoapIn" />
+      <wsdl:output message="tns:WSActualizar_ClinicaSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WebServiceBDDSoap" type="tns:WebServiceBDDSoap">
@@ -217,8 +304,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="WSValidar_Usuario1">
-      <soap:operation soapAction="http://tempuri.org/WSValidar_Usuario1" style="document" />
+    <wsdl:operation name="WSBuscar_Usuario_ID">
+      <soap:operation soapAction="http://tempuri.org/WSBuscar_Usuario_ID" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -226,8 +313,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="WSValidar_Usuario2">
-      <soap:operation soapAction="http://tempuri.org/WSValidar_Usuario2" style="document" />
+    <wsdl:operation name="WSBuscar_Usuario_ID_Nombre">
+      <soap:operation soapAction="http://tempuri.org/WSBuscar_Usuario_ID_Nombre" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -237,6 +324,24 @@
     </wsdl:operation>
     <wsdl:operation name="WSinsert_Usuario">
       <soap:operation soapAction="http://tempuri.org/WSinsert_Usuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Actualizar_Usuario">
+      <soap:operation soapAction="http://tempuri.org/Actualizar_Usuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSselect_Clinica">
+      <soap:operation soapAction="http://tempuri.org/WSselect_Clinica" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -255,6 +360,15 @@
     </wsdl:operation>
     <wsdl:operation name="WSBorrar_Clinica">
       <soap:operation soapAction="http://tempuri.org/WSBorrar_Clinica" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSActualizar_Clinica">
+      <soap:operation soapAction="http://tempuri.org/WSActualizar_Clinica" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -283,8 +397,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="WSValidar_Usuario1">
-      <soap12:operation soapAction="http://tempuri.org/WSValidar_Usuario1" style="document" />
+    <wsdl:operation name="WSBuscar_Usuario_ID">
+      <soap12:operation soapAction="http://tempuri.org/WSBuscar_Usuario_ID" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -292,8 +406,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="WSValidar_Usuario2">
-      <soap12:operation soapAction="http://tempuri.org/WSValidar_Usuario2" style="document" />
+    <wsdl:operation name="WSBuscar_Usuario_ID_Nombre">
+      <soap12:operation soapAction="http://tempuri.org/WSBuscar_Usuario_ID_Nombre" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -303,6 +417,24 @@
     </wsdl:operation>
     <wsdl:operation name="WSinsert_Usuario">
       <soap12:operation soapAction="http://tempuri.org/WSinsert_Usuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Actualizar_Usuario">
+      <soap12:operation soapAction="http://tempuri.org/Actualizar_Usuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSselect_Clinica">
+      <soap12:operation soapAction="http://tempuri.org/WSselect_Clinica" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -321,6 +453,15 @@
     </wsdl:operation>
     <wsdl:operation name="WSBorrar_Clinica">
       <soap12:operation soapAction="http://tempuri.org/WSBorrar_Clinica" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSActualizar_Clinica">
+      <soap12:operation soapAction="http://tempuri.org/WSActualizar_Clinica" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -17,5 +17,20 @@ namespace ConsumeServicio
             GridView1.DataSource = ds.Tables[0];
             GridView1.DataBind();
         }
+
+        protected void Agregar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("https://localhost:44321/PaginasUsuario/agregarUsuario.aspx");
+        }
+
+        protected void Modificar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("https://localhost:44321/PaginasUsuario/modificarUsuario.aspx");
+        }
+
+        protected void Buscar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("https://localhost:44321/PaginasUsuario/buscarUsuario.aspx");
+        }
     }
 }

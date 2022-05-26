@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <LINK REL=StyleSheet HREF="menuUsuario.css" TYPE="text/css">
+    <LINK REL=StyleSheet HREF="menuUsuario.css" TYPE="text/css"/>
     <title>Mi pagina</title>
 </head>
 <body>
@@ -18,7 +18,7 @@
 
 		<nav>
 			<ul>
-				<li><a href="#">Usuarios</a></li>
+				<li><a href="https://localhost:44321/PaginasUsuario/menuUsuario.aspx">Usuarios</a></li>
 				<li><a href="#">Clinicas</a></li>
 				<li><a href="#">Medicamentos</a></li>
                 <li><a href="#">Enfermedades</a></li>
@@ -28,7 +28,7 @@
 	</header><!-- / #main-header -->
 
         <div>
-            <div class ="titulo"><h1><center><asp:Label ID="Label1" runat="server" Text="Menú Usuarios"></asp:Label></center></h1><br /></div>
+            <div class ="titulo"><center><asp:Label ID="Label1" runat="server" Text="Menú Usuarios"></asp:Label></center><br /></div>
             <center><asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Width="422px">
                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                 <EditRowStyle BackColor="#999999" />
@@ -42,6 +42,14 @@
                 <SortedDescendingCellStyle BackColor="#FFFDF8" />
                 <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
             </asp:GridView></center>
+        </div>
+        <div class="botones">
+            <center>
+            <asp:Button ID="Agregar" class="btn" runat="server" Text="Agregar" OnClick="Agregar_Click" />
+            <asp:Button ID="Eliminar" class="btn" runat="server" Text="Eliminar" />
+            <asp:Button ID="Modificar" class="btn" runat="server" Text="Modificar" OnClick="Modificar_Click" />
+            <asp:Button ID="Buscar" class="btn" runat="server" Text="Buscar" OnClick="Buscar_Click" />
+            </center>
         </div>
     </form>
 </body>

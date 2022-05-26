@@ -12,8 +12,8 @@
     <form id="form1" runat="server">
         <div class="login">
 	<h1>Login</h1>
-        <asp:TextBox ID="Usuario"  placeholder="Usuario" runat="server"></asp:TextBox>
-    	<asp:TextBox ID="Contra"  placeholder="Contraseña" runat="server"></asp:TextBox>
+        <asp:TextBox ID="Usuario"  placeholder="Usuario" runat="server" required="required"></asp:TextBox>
+    	<asp:TextBox ID="Contra"  placeholder="Contraseña" runat="server" required="required" type="password" ></asp:TextBox>
         <asp:Button ID="Ingresar"  class="btn btn-primary btn-block btn-large"  runat="server" Text="Ingresar" OnClick="Ingresar_Click"  />
     </div>
     </form>

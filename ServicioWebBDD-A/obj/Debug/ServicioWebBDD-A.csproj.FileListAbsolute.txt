@@ -79,6 +79,8 @@ C:\Users\Alexander\source\repos\ServicioWebBDD-A\bin\System.Buffers.xml
 C:\Users\Alexander\source\repos\ServicioWebBDD-A\bin\System.Memory.xml
 C:\Users\Alexander\source\repos\ServicioWebBDD-A\bin\System.Numerics.Vectors.xml
 C:\Users\Alexander\source\repos\ServicioWebBDD-A\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Alexander\Documents\GitHub\ProyectoPrograI2022\ServicioWebBDD-A\obj\Debug\ServicioWebBDD-A.csproj.CoreCompileInputs.cache
+C:\Users\Alexander\Documents\GitHub\ProyectoPrograI2022\ServicioWebBDD-A\obj\Debug\ServicioWebBDD-A.csproj.AssemblyReference.cache
 C:\Users\Alexander\Documents\GitHub\ProyectoPrograI2022\ServicioWebBDD-A\bin\ServicioWebBDD-A.dll.config
 C:\Users\Alexander\Documents\GitHub\ProyectoPrograI2022\ServicioWebBDD-A\bin\ServicioWebBDD-A.dll
 C:\Users\Alexander\Documents\GitHub\ProyectoPrograI2022\ServicioWebBDD-A\bin\ServicioWebBDD-A.pdb
@@ -155,8 +157,6 @@ C:\Users\Alexander\Documents\GitHub\ProyectoPrograI2022\ServicioWebBDD-A\bin\Sys
 C:\Users\Alexander\Documents\GitHub\ProyectoPrograI2022\ServicioWebBDD-A\bin\System.Numerics.Vectors.xml
 C:\Users\Alexander\Documents\GitHub\ProyectoPrograI2022\ServicioWebBDD-A\bin\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Alexander\Documents\GitHub\ProyectoPrograI2022\ServicioWebBDD-A\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Alexander\Documents\GitHub\ProyectoPrograI2022\ServicioWebBDD-A\obj\Debug\ServicioWebBDD-A.csproj.AssemblyReference.cache
-C:\Users\Alexander\Documents\GitHub\ProyectoPrograI2022\ServicioWebBDD-A\obj\Debug\ServicioWebBDD-A.csproj.CoreCompileInputs.cache
 C:\Users\Alexander\Documents\GitHub\ProyectoPrograI2022\ServicioWebBDD-A\obj\Debug\ServicioWebBDD-A.csproj.CopyComplete
 C:\Users\Alexander\Documents\GitHub\ProyectoPrograI2022\ServicioWebBDD-A\obj\Debug\ServicioWebBDD-A.dll
 C:\Users\Alexander\Documents\GitHub\ProyectoPrograI2022\ServicioWebBDD-A\obj\Debug\ServicioWebBDD-A.pdb

@@ -23,7 +23,7 @@ namespace ConsumeServicio
             bool ds = ws.WSValidar_Usuario(ids, contras);
             if (ds)
             {
-                Response.Redirect("https://localhost:44321/menuUsuario.aspx");
+                Response.Redirect("https://localhost:44321/PaginasUsuario/menuUsuario.aspx");
             }
         }
     }

@@ -1,3 +1,5 @@
+C:\Users\Alexander\Documents\GitHub\ProyectoPrograI2022\ConsumeServicio\obj\Debug\ConsumeServicio.csproj.CoreCompileInputs.cache
+C:\Users\Alexander\Documents\GitHub\ProyectoPrograI2022\ConsumeServicio\obj\Debug\ConsumeServicio.csproj.AssemblyReference.cache
 C:\Users\Alexander\Documents\GitHub\ProyectoPrograI2022\ConsumeServicio\bin\ConsumeServicio.dll.config
 C:\Users\Alexander\Documents\GitHub\ProyectoPrograI2022\ConsumeServicio\bin\ConsumeServicio.dll
 C:\Users\Alexander\Documents\GitHub\ProyectoPrograI2022\ConsumeServicio\bin\ConsumeServicio.pdb
@@ -52,8 +54,6 @@ C:\Users\Alexander\Documents\GitHub\ProyectoPrograI2022\ConsumeServicio\bin\rosl
 C:\Users\Alexander\Documents\GitHub\ProyectoPrograI2022\ConsumeServicio\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\Alexander\Documents\GitHub\ProyectoPrograI2022\ConsumeServicio\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\Alexander\Documents\GitHub\ProyectoPrograI2022\ConsumeServicio\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Alexander\Documents\GitHub\ProyectoPrograI2022\ConsumeServicio\obj\Debug\ConsumeServicio.csproj.AssemblyReference.cache
-C:\Users\Alexander\Documents\GitHub\ProyectoPrograI2022\ConsumeServicio\obj\Debug\ConsumeServicio.csproj.CoreCompileInputs.cache
 C:\Users\Alexander\Documents\GitHub\ProyectoPrograI2022\ConsumeServicio\obj\Debug\ConsumeServicio.csproj.CopyComplete
 C:\Users\Alexander\Documents\GitHub\ProyectoPrograI2022\ConsumeServicio\obj\Debug\ConsumeServicio.dll
 C:\Users\Alexander\Documents\GitHub\ProyectoPrograI2022\ConsumeServicio\obj\Debug\ConsumeServicio.pdb

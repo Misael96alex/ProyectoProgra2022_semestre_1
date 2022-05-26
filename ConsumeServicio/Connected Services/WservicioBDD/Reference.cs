@@ -30,26 +30,40 @@ namespace ConsumeServicio.WservicioBDD {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSValidar_Usuario", ReplyAction="*")]
         System.Threading.Tasks.Task<bool> WSValidar_UsuarioAsync(int id, int contrasena);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSValidar_Usuario1", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSBuscar_Usuario_ID", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet WSValidar_Usuario1(int id, int contrasena);
+        System.Data.DataSet WSBuscar_Usuario_ID(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSValidar_Usuario1", ReplyAction="*")]
-        System.Threading.Tasks.Task<System.Data.DataSet> WSValidar_Usuario1Async(int id, int contrasena);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSBuscar_Usuario_ID", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> WSBuscar_Usuario_IDAsync(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSValidar_Usuario2", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSBuscar_Usuario_ID_Nombre", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        int WSValidar_Usuario2(int id, int contrasena);
+        System.Data.DataSet WSBuscar_Usuario_ID_Nombre(string nombre);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSValidar_Usuario2", ReplyAction="*")]
-        System.Threading.Tasks.Task<int> WSValidar_Usuario2Async(int id, int contrasena);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSBuscar_Usuario_ID_Nombre", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> WSBuscar_Usuario_ID_NombreAsync(string nombre);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSinsert_Usuario", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string WSinsert_Usuario(int id_usuario, int id_clinica, string nombre_usuario, string apellido_usuario, string fecha_nac, string dpi, int nit, string direccion, string correo, int no_telelefono);
+        string WSinsert_Usuario(int id_clinica, string nombre_usuario, string apellido_usuario, string fecha_nac, string dpi, int nit, string direccion, string correo, int no_telelefono, int contrasena);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSinsert_Usuario", ReplyAction="*")]
-        System.Threading.Tasks.Task<string> WSinsert_UsuarioAsync(int id_usuario, int id_clinica, string nombre_usuario, string apellido_usuario, string fecha_nac, string dpi, int nit, string direccion, string correo, int no_telelefono);
+        System.Threading.Tasks.Task<string> WSinsert_UsuarioAsync(int id_clinica, string nombre_usuario, string apellido_usuario, string fecha_nac, string dpi, int nit, string direccion, string correo, int no_telelefono, int contrasena);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Actualizar_Usuario", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void Actualizar_Usuario(int id_usuario, int id_clinica, string nombre_usuario, string apellido_usuario, string fecha_nac, string dpi, int nit, string direccion, string correo, int no_telelefono, int contrasena);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Actualizar_Usuario", ReplyAction="*")]
+        System.Threading.Tasks.Task Actualizar_UsuarioAsync(int id_usuario, int id_clinica, string nombre_usuario, string apellido_usuario, string fecha_nac, string dpi, int nit, string direccion, string correo, int no_telelefono, int contrasena);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSselect_Clinica", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet WSselect_Clinica();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSselect_Clinica", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> WSselect_ClinicaAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSinsert_Clinica", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -64,6 +78,13 @@ namespace ConsumeServicio.WservicioBDD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSBorrar_Clinica", ReplyAction="*")]
         System.Threading.Tasks.Task WSBorrar_ClinicaAsync(int id_clinica);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSActualizar_Clinica", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void WSActualizar_Clinica(int id_clinica, string nombre_clinica, string direccion, string correo, int no_telelefono, int nit);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSActualizar_Clinica", ReplyAction="*")]
+        System.Threading.Tasks.Task WSActualizar_ClinicaAsync(int id_clinica, string nombre_clinica, string direccion, string correo, int no_telelefono, int nit);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -109,28 +130,44 @@ namespace ConsumeServicio.WservicioBDD {
             return base.Channel.WSValidar_UsuarioAsync(id, contrasena);
         }
         
-        public System.Data.DataSet WSValidar_Usuario1(int id, int contrasena) {
-            return base.Channel.WSValidar_Usuario1(id, contrasena);
+        public System.Data.DataSet WSBuscar_Usuario_ID(int id) {
+            return base.Channel.WSBuscar_Usuario_ID(id);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataSet> WSValidar_Usuario1Async(int id, int contrasena) {
-            return base.Channel.WSValidar_Usuario1Async(id, contrasena);
+        public System.Threading.Tasks.Task<System.Data.DataSet> WSBuscar_Usuario_IDAsync(int id) {
+            return base.Channel.WSBuscar_Usuario_IDAsync(id);
         }
         
-        public int WSValidar_Usuario2(int id, int contrasena) {
-            return base.Channel.WSValidar_Usuario2(id, contrasena);
+        public System.Data.DataSet WSBuscar_Usuario_ID_Nombre(string nombre) {
+            return base.Channel.WSBuscar_Usuario_ID_Nombre(nombre);
         }
         
-        public System.Threading.Tasks.Task<int> WSValidar_Usuario2Async(int id, int contrasena) {
-            return base.Channel.WSValidar_Usuario2Async(id, contrasena);
+        public System.Threading.Tasks.Task<System.Data.DataSet> WSBuscar_Usuario_ID_NombreAsync(string nombre) {
+            return base.Channel.WSBuscar_Usuario_ID_NombreAsync(nombre);
         }
         
-        public string WSinsert_Usuario(int id_usuario, int id_clinica, string nombre_usuario, string apellido_usuario, string fecha_nac, string dpi, int nit, string direccion, string correo, int no_telelefono) {
-            return base.Channel.WSinsert_Usuario(id_usuario, id_clinica, nombre_usuario, apellido_usuario, fecha_nac, dpi, nit, direccion, correo, no_telelefono);
+        public string WSinsert_Usuario(int id_clinica, string nombre_usuario, string apellido_usuario, string fecha_nac, string dpi, int nit, string direccion, string correo, int no_telelefono, int contrasena) {
+            return base.Channel.WSinsert_Usuario(id_clinica, nombre_usuario, apellido_usuario, fecha_nac, dpi, nit, direccion, correo, no_telelefono, contrasena);
         }
         
-        public System.Threading.Tasks.Task<string> WSinsert_UsuarioAsync(int id_usuario, int id_clinica, string nombre_usuario, string apellido_usuario, string fecha_nac, string dpi, int nit, string direccion, string correo, int no_telelefono) {
-            return base.Channel.WSinsert_UsuarioAsync(id_usuario, id_clinica, nombre_usuario, apellido_usuario, fecha_nac, dpi, nit, direccion, correo, no_telelefono);
+        public System.Threading.Tasks.Task<string> WSinsert_UsuarioAsync(int id_clinica, string nombre_usuario, string apellido_usuario, string fecha_nac, string dpi, int nit, string direccion, string correo, int no_telelefono, int contrasena) {
+            return base.Channel.WSinsert_UsuarioAsync(id_clinica, nombre_usuario, apellido_usuario, fecha_nac, dpi, nit, direccion, correo, no_telelefono, contrasena);
+        }
+        
+        public void Actualizar_Usuario(int id_usuario, int id_clinica, string nombre_usuario, string apellido_usuario, string fecha_nac, string dpi, int nit, string direccion, string correo, int no_telelefono, int contrasena) {
+            base.Channel.Actualizar_Usuario(id_usuario, id_clinica, nombre_usuario, apellido_usuario, fecha_nac, dpi, nit, direccion, correo, no_telelefono, contrasena);
+        }
+        
+        public System.Threading.Tasks.Task Actualizar_UsuarioAsync(int id_usuario, int id_clinica, string nombre_usuario, string apellido_usuario, string fecha_nac, string dpi, int nit, string direccion, string correo, int no_telelefono, int contrasena) {
+            return base.Channel.Actualizar_UsuarioAsync(id_usuario, id_clinica, nombre_usuario, apellido_usuario, fecha_nac, dpi, nit, direccion, correo, no_telelefono, contrasena);
+        }
+        
+        public System.Data.DataSet WSselect_Clinica() {
+            return base.Channel.WSselect_Clinica();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> WSselect_ClinicaAsync() {
+            return base.Channel.WSselect_ClinicaAsync();
         }
         
         public string WSinsert_Clinica(int id_clinica, string nombre_clinica, string direccion, string correo, int no_telelefono, int nit) {
@@ -147,6 +184,14 @@ namespace ConsumeServicio.WservicioBDD {
         
         public System.Threading.Tasks.Task WSBorrar_ClinicaAsync(int id_clinica) {
             return base.Channel.WSBorrar_ClinicaAsync(id_clinica);
+        }
+        
+        public void WSActualizar_Clinica(int id_clinica, string nombre_clinica, string direccion, string correo, int no_telelefono, int nit) {
+            base.Channel.WSActualizar_Clinica(id_clinica, nombre_clinica, direccion, correo, no_telelefono, nit);
+        }
+        
+        public System.Threading.Tasks.Task WSActualizar_ClinicaAsync(int id_clinica, string nombre_clinica, string direccion, string correo, int no_telelefono, int nit) {
+            return base.Channel.WSActualizar_ClinicaAsync(id_clinica, nombre_clinica, direccion, correo, no_telelefono, nit);
         }
     }
 }

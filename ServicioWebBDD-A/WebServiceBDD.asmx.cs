@@ -351,7 +351,7 @@ namespace ServicioWebBDD_A
 
         /*
          * **********************************************
-         * *                EMPLEADO                  * *
+         * *                PACIENTE                  * *
          * **********************************************
          * */
 
@@ -369,6 +369,110 @@ namespace ServicioWebBDD_A
             da.Fill(ds);
             return ds;
 
+        }
+
+        [WebMethod]
+        public String WSinsertPaciente(int id_paciente, string nombre_paciente, string apellido_paciente, string familiar_responsable, string fecha_nac, string tipo_sangre,string enferm_preexitente, string dpi,  int nit, string direccion, string correo, int no_telelefono)
+        {
+            try
+            {
+                MySqlConnection conn = new MySqlConnection();
+                conn.ConnectionString = CadenaConexion;
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.CommandText = "INSERT INTO PACIENTE ( id_paciente, nombre_paciente, apellido_paciente, familiar_responsable, fecha_nac, tipo_sangre, enferm_preexitente, dpi,nit,direccion,correo,no_telelefono ) VALUES ( '" + id_paciente + "', '" + nombre_paciente + "', '" + apellido_paciente + "', '" + familiar_responsable + "', '" + fecha_nac + "', '" + tipo_sangre + "', '" + enferm_preexitente + "', '" + dpi + "', '" + nit + "', '" + direccion + "', '" + correo + "', '" + no_telelefono + "');";
+                cmd.Connection = conn;
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                return "Insercion con exito";
+            }
+            catch (Exception e)
+            {
+                return "error: " + e.Message;
+            }
+        }
+
+        /*
+         * **********************************************
+         * *                MEDICAMENTO                  * *
+         * **********************************************
+         * */
+
+        [WebMethod]
+        public DataSet WSselectMedicamento()
+        {
+
+            MySqlConnection conn = new MySqlConnection();
+            conn.ConnectionString = CadenaConexion;
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT m.id_medicamento ID, m.descripcion DESCRIPCION, m.precio PRECIO, m.marca MARCA, m.cantidad CANTIDAD, m.dosis DOSIS, m.presentacion PRESENTACION FROM medicamentos m; ", conn);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+
+        }
+
+        [WebMethod]
+        public String WSinsertMedicamento(int id_medicamento, string descripcion, string precio, string marca, string cantidad, string dosis, string presentacion)
+        {
+            try
+            {
+                MySqlConnection conn = new MySqlConnection();
+                conn.ConnectionString = CadenaConexion;
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.CommandText = "INSERT INTO medicamentos ( id_medicamento, descripcion, precio, marca, cantidad, dosis, presentacion ) VALUES ( '" + id_medicamento + "', '" + descripcion + "', '" + precio + "', '" + marca + "', '" + cantidad + "', '" + dosis + "', '" + presentacion +  "');";
+                cmd.Connection = conn;
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                return "Insercion con exito";
+            }
+            catch (Exception e)
+            {
+                return "error: " + e.Message;
+            }
+        }
+
+        /*
+         * **********************************************
+         * *                ENFERMEDAD                  * *
+         * **********************************************
+         * */
+
+        [WebMethod]
+        public DataSet WSselectEnfermedad()
+        {
+
+            MySqlConnection conn = new MySqlConnection();
+            conn.ConnectionString = CadenaConexion;
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT e.id_enfermedad ID, e.nombre_enfermedad ENFERMEDAD, e.tipo_enfermedad TIPO, e.nivel_contagio NIVEL_CONTAGIO FROM enfermedad e;", conn);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+
+        }
+
+        [WebMethod]
+        public String WSinsertEnfermedad(int id_enfermedad, string nombre_enfermedad, string tipo_enfermedad, string nivel_contagio)
+        {
+            try
+            {
+                MySqlConnection conn = new MySqlConnection();
+                conn.ConnectionString = CadenaConexion;
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.CommandText = "INSERT INTO PACIENTE ( id_enfermedad, nombre_enfermedad, tipo_enfermedad, nivel_contagio) VALUES ( '" + id_enfermedad + "', '" + nombre_enfermedad + "', '" + tipo_enfermedad + "', '" + nivel_contagio +  "');";
+                cmd.Connection = conn;
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                return "Insercion con exito";
+            }
+            catch (Exception e)
+            {
+                return "error: " + e.Message;
+            }
         }
 
 

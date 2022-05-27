@@ -357,6 +357,102 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="WSinsertPaciente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_paciente" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre_paciente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apellido_paciente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="familiar_responsable" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fecha_nac" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tipo_sangre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="enferm_preexitente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dpi" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nit" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="direccion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="correo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="no_telelefono" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSinsertPacienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSinsertPacienteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSselectMedicamento">
+        <s:complexType />
+      </s:element>
+      <s:element name="WSselectMedicamentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSselectMedicamentoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSinsertMedicamento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_medicamento" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="precio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="marca" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cantidad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dosis" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="presentacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSinsertMedicamentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSinsertMedicamentoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSselectEnfermedad">
+        <s:complexType />
+      </s:element>
+      <s:element name="WSselectEnfermedadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSselectEnfermedadResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSinsertEnfermedad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_enfermedad" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre_enfermedad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tipo_enfermedad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nivel_contagio" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSinsertEnfermedadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSinsertEnfermedadResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="WSselect_UsuarioSoapIn">
@@ -479,6 +575,36 @@
   <wsdl:message name="WSselectPacienteSoapOut">
     <wsdl:part name="parameters" element="tns:WSselectPacienteResponse" />
   </wsdl:message>
+  <wsdl:message name="WSinsertPacienteSoapIn">
+    <wsdl:part name="parameters" element="tns:WSinsertPaciente" />
+  </wsdl:message>
+  <wsdl:message name="WSinsertPacienteSoapOut">
+    <wsdl:part name="parameters" element="tns:WSinsertPacienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSselectMedicamentoSoapIn">
+    <wsdl:part name="parameters" element="tns:WSselectMedicamento" />
+  </wsdl:message>
+  <wsdl:message name="WSselectMedicamentoSoapOut">
+    <wsdl:part name="parameters" element="tns:WSselectMedicamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSinsertMedicamentoSoapIn">
+    <wsdl:part name="parameters" element="tns:WSinsertMedicamento" />
+  </wsdl:message>
+  <wsdl:message name="WSinsertMedicamentoSoapOut">
+    <wsdl:part name="parameters" element="tns:WSinsertMedicamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSselectEnfermedadSoapIn">
+    <wsdl:part name="parameters" element="tns:WSselectEnfermedad" />
+  </wsdl:message>
+  <wsdl:message name="WSselectEnfermedadSoapOut">
+    <wsdl:part name="parameters" element="tns:WSselectEnfermedadResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSinsertEnfermedadSoapIn">
+    <wsdl:part name="parameters" element="tns:WSinsertEnfermedad" />
+  </wsdl:message>
+  <wsdl:message name="WSinsertEnfermedadSoapOut">
+    <wsdl:part name="parameters" element="tns:WSinsertEnfermedadResponse" />
+  </wsdl:message>
   <wsdl:portType name="WebServiceBDDSoap">
     <wsdl:operation name="WSselect_Usuario">
       <wsdl:input message="tns:WSselect_UsuarioSoapIn" />
@@ -559,6 +685,26 @@
     <wsdl:operation name="WSselectPaciente">
       <wsdl:input message="tns:WSselectPacienteSoapIn" />
       <wsdl:output message="tns:WSselectPacienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSinsertPaciente">
+      <wsdl:input message="tns:WSinsertPacienteSoapIn" />
+      <wsdl:output message="tns:WSinsertPacienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSselectMedicamento">
+      <wsdl:input message="tns:WSselectMedicamentoSoapIn" />
+      <wsdl:output message="tns:WSselectMedicamentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSinsertMedicamento">
+      <wsdl:input message="tns:WSinsertMedicamentoSoapIn" />
+      <wsdl:output message="tns:WSinsertMedicamentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSselectEnfermedad">
+      <wsdl:input message="tns:WSselectEnfermedadSoapIn" />
+      <wsdl:output message="tns:WSselectEnfermedadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSinsertEnfermedad">
+      <wsdl:input message="tns:WSinsertEnfermedadSoapIn" />
+      <wsdl:output message="tns:WSinsertEnfermedadSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WebServiceBDDSoap" type="tns:WebServiceBDDSoap">
@@ -743,6 +889,51 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="WSinsertPaciente">
+      <soap:operation soapAction="http://tempuri.org/WSinsertPaciente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSselectMedicamento">
+      <soap:operation soapAction="http://tempuri.org/WSselectMedicamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSinsertMedicamento">
+      <soap:operation soapAction="http://tempuri.org/WSinsertMedicamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSselectEnfermedad">
+      <soap:operation soapAction="http://tempuri.org/WSselectEnfermedad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSinsertEnfermedad">
+      <soap:operation soapAction="http://tempuri.org/WSinsertEnfermedad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WebServiceBDDSoap12" type="tns:WebServiceBDDSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -919,6 +1110,51 @@
     </wsdl:operation>
     <wsdl:operation name="WSselectPaciente">
       <soap12:operation soapAction="http://tempuri.org/WSselectPaciente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSinsertPaciente">
+      <soap12:operation soapAction="http://tempuri.org/WSinsertPaciente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSselectMedicamento">
+      <soap12:operation soapAction="http://tempuri.org/WSselectMedicamento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSinsertMedicamento">
+      <soap12:operation soapAction="http://tempuri.org/WSinsertMedicamento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSselectEnfermedad">
+      <soap12:operation soapAction="http://tempuri.org/WSselectEnfermedad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSinsertEnfermedad">
+      <soap12:operation soapAction="http://tempuri.org/WSinsertEnfermedad" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

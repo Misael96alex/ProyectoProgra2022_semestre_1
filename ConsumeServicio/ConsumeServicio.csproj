@@ -83,6 +83,8 @@
     <Content Include="PaginasEmpleados\agregarEmpleado.css" />
     <Content Include="PaginasEmpleados\menuEmpleado.aspx" />
     <Content Include="PaginasEmpleados\menuEmpleado.css" />
+    <Content Include="PaginasPacientes\agregarPaciente.aspx" />
+    <Content Include="PaginasPacientes\agregarPaciente.css" />
     <Content Include="PaginasPacientes\menuPaciente.aspx" />
     <Content Include="PaginasPacientes\menuPaciente.css" />
     <Content Include="PaginasUsuario\agregarUsuario.css" />
@@ -161,6 +163,13 @@
     </Compile>
     <Compile Include="PaginasEmpleados\menuEmpleado.aspx.designer.cs">
       <DependentUpon>menuEmpleado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginasPacientes\agregarPaciente.aspx.cs">
+      <DependentUpon>agregarPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginasPacientes\agregarPaciente.aspx.designer.cs">
+      <DependentUpon>agregarPaciente.aspx</DependentUpon>
     </Compile>
     <Compile Include="PaginasPacientes\menuPaciente.aspx.cs">
       <DependentUpon>menuPaciente.aspx</DependentUpon>

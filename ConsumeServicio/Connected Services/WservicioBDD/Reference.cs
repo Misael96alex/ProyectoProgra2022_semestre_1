@@ -155,6 +155,41 @@ namespace ConsumeServicio.WservicioBDD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSselectPaciente", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Data.DataSet> WSselectPacienteAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSinsertPaciente", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string WSinsertPaciente(int id_paciente, string nombre_paciente, string apellido_paciente, string familiar_responsable, string fecha_nac, string tipo_sangre, string enferm_preexitente, string dpi, int nit, string direccion, string correo, int no_telelefono);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSinsertPaciente", ReplyAction="*")]
+        System.Threading.Tasks.Task<string> WSinsertPacienteAsync(int id_paciente, string nombre_paciente, string apellido_paciente, string familiar_responsable, string fecha_nac, string tipo_sangre, string enferm_preexitente, string dpi, int nit, string direccion, string correo, int no_telelefono);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSselectMedicamento", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet WSselectMedicamento();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSselectMedicamento", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> WSselectMedicamentoAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSinsertMedicamento", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string WSinsertMedicamento(int id_medicamento, string descripcion, string precio, string marca, string cantidad, string dosis, string presentacion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSinsertMedicamento", ReplyAction="*")]
+        System.Threading.Tasks.Task<string> WSinsertMedicamentoAsync(int id_medicamento, string descripcion, string precio, string marca, string cantidad, string dosis, string presentacion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSselectEnfermedad", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet WSselectEnfermedad();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSselectEnfermedad", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> WSselectEnfermedadAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSinsertEnfermedad", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string WSinsertEnfermedad(int id_enfermedad, string nombre_enfermedad, string tipo_enfermedad, string nivel_contagio);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSinsertEnfermedad", ReplyAction="*")]
+        System.Threading.Tasks.Task<string> WSinsertEnfermedadAsync(int id_enfermedad, string nombre_enfermedad, string tipo_enfermedad, string nivel_contagio);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -342,6 +377,46 @@ namespace ConsumeServicio.WservicioBDD {
         
         public System.Threading.Tasks.Task<System.Data.DataSet> WSselectPacienteAsync() {
             return base.Channel.WSselectPacienteAsync();
+        }
+        
+        public string WSinsertPaciente(int id_paciente, string nombre_paciente, string apellido_paciente, string familiar_responsable, string fecha_nac, string tipo_sangre, string enferm_preexitente, string dpi, int nit, string direccion, string correo, int no_telelefono) {
+            return base.Channel.WSinsertPaciente(id_paciente, nombre_paciente, apellido_paciente, familiar_responsable, fecha_nac, tipo_sangre, enferm_preexitente, dpi, nit, direccion, correo, no_telelefono);
+        }
+        
+        public System.Threading.Tasks.Task<string> WSinsertPacienteAsync(int id_paciente, string nombre_paciente, string apellido_paciente, string familiar_responsable, string fecha_nac, string tipo_sangre, string enferm_preexitente, string dpi, int nit, string direccion, string correo, int no_telelefono) {
+            return base.Channel.WSinsertPacienteAsync(id_paciente, nombre_paciente, apellido_paciente, familiar_responsable, fecha_nac, tipo_sangre, enferm_preexitente, dpi, nit, direccion, correo, no_telelefono);
+        }
+        
+        public System.Data.DataSet WSselectMedicamento() {
+            return base.Channel.WSselectMedicamento();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> WSselectMedicamentoAsync() {
+            return base.Channel.WSselectMedicamentoAsync();
+        }
+        
+        public string WSinsertMedicamento(int id_medicamento, string descripcion, string precio, string marca, string cantidad, string dosis, string presentacion) {
+            return base.Channel.WSinsertMedicamento(id_medicamento, descripcion, precio, marca, cantidad, dosis, presentacion);
+        }
+        
+        public System.Threading.Tasks.Task<string> WSinsertMedicamentoAsync(int id_medicamento, string descripcion, string precio, string marca, string cantidad, string dosis, string presentacion) {
+            return base.Channel.WSinsertMedicamentoAsync(id_medicamento, descripcion, precio, marca, cantidad, dosis, presentacion);
+        }
+        
+        public System.Data.DataSet WSselectEnfermedad() {
+            return base.Channel.WSselectEnfermedad();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> WSselectEnfermedadAsync() {
+            return base.Channel.WSselectEnfermedadAsync();
+        }
+        
+        public string WSinsertEnfermedad(int id_enfermedad, string nombre_enfermedad, string tipo_enfermedad, string nivel_contagio) {
+            return base.Channel.WSinsertEnfermedad(id_enfermedad, nombre_enfermedad, tipo_enfermedad, nivel_contagio);
+        }
+        
+        public System.Threading.Tasks.Task<string> WSinsertEnfermedadAsync(int id_enfermedad, string nombre_enfermedad, string tipo_enfermedad, string nivel_contagio) {
+            return base.Channel.WSinsertEnfermedadAsync(id_enfermedad, nombre_enfermedad, tipo_enfermedad, nivel_contagio);
         }
     }
 }

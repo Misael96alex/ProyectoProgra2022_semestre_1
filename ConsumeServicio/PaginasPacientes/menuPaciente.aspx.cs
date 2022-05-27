@@ -20,7 +20,7 @@ namespace ConsumeServicio.PaginasPacientes
 
         protected void Agregar_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("https://localhost:44321/PaginasPacientes/agregarPaciente.aspx");
         }
 
         protected void Eliminar_Click(object sender, EventArgs e)

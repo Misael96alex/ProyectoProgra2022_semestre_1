@@ -71,8 +71,20 @@
   <ItemGroup>
     <Content Include="PaginasClinica\agregarClinica.aspx" />
     <Content Include="PaginasClinica\agregarClinica.css" />
+    <Content Include="PaginasClinica\borrarClinica.aspx" />
+    <Content Include="PaginasClinica\borrarClinica.css" />
+    <Content Include="PaginasClinica\buscarClinica.aspx" />
+    <Content Include="PaginasClinica\buscarClinica.css" />
     <Content Include="PaginasClinica\menuClinica.aspx" />
     <Content Include="PaginasClinica\menuClinica.css" />
+    <Content Include="PaginasClinica\modificarClinica.aspx" />
+    <Content Include="PaginasClinica\modificarClinica.css" />
+    <Content Include="PaginasEmpleados\agregarEmpleado.aspx" />
+    <Content Include="PaginasEmpleados\agregarEmpleado.css" />
+    <Content Include="PaginasEmpleados\menuEmpleado.aspx" />
+    <Content Include="PaginasEmpleados\menuEmpleado.css" />
+    <Content Include="PaginasPacientes\menuPaciente.aspx" />
+    <Content Include="PaginasPacientes\menuPaciente.css" />
     <Content Include="PaginasUsuario\agregarUsuario.css" />
     <Content Include="PaginasUsuario\borrarUsuario.aspx" />
     <Content Include="PaginasUsuario\borrarUsuario.css" />
@@ -108,12 +120,54 @@
     <Compile Include="PaginasClinica\agregarClinica.aspx.designer.cs">
       <DependentUpon>agregarClinica.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PaginasClinica\borrarClinica.aspx.cs">
+      <DependentUpon>borrarClinica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginasClinica\borrarClinica.aspx.designer.cs">
+      <DependentUpon>borrarClinica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginasClinica\buscarClinica.aspx.cs">
+      <DependentUpon>buscarClinica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginasClinica\buscarClinica.aspx.designer.cs">
+      <DependentUpon>buscarClinica.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PaginasClinica\menuClinica.aspx.cs">
       <DependentUpon>menuClinica.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="PaginasClinica\menuClinica.aspx.designer.cs">
       <DependentUpon>menuClinica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginasClinica\modificarClinica.aspx.cs">
+      <DependentUpon>modificarClinica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginasClinica\modificarClinica.aspx.designer.cs">
+      <DependentUpon>modificarClinica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginasEmpleados\agregarEmpleado.aspx.cs">
+      <DependentUpon>agregarEmpleado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginasEmpleados\agregarEmpleado.aspx.designer.cs">
+      <DependentUpon>agregarEmpleado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginasEmpleados\menuEmpleado.aspx.cs">
+      <DependentUpon>menuEmpleado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginasEmpleados\menuEmpleado.aspx.designer.cs">
+      <DependentUpon>menuEmpleado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginasPacientes\menuPaciente.aspx.cs">
+      <DependentUpon>menuPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginasPacientes\menuPaciente.aspx.designer.cs">
+      <DependentUpon>menuPaciente.aspx</DependentUpon>
     </Compile>
     <Compile Include="PaginasUsuario\borrarUsuario.aspx.cs">
       <DependentUpon>borrarUsuario.aspx</DependentUpon>
@@ -175,6 +229,7 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\WservicioBDD\" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

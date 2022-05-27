@@ -92,6 +92,69 @@ namespace ConsumeServicio.WservicioBDD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSActualizar_Clinica", ReplyAction="*")]
         System.Threading.Tasks.Task WSActualizar_ClinicaAsync(int id_clinica, string nombre_clinica, string direccion, string correo, int no_telelefono, int nit);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSBuscar_Clinica_ID", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet WSBuscar_Clinica_ID(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSBuscar_Clinica_ID", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> WSBuscar_Clinica_IDAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSBuscar_Clinica_ID_Nombre", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet WSBuscar_Clinica_ID_Nombre(string nombre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSBuscar_Clinica_ID_Nombre", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> WSBuscar_Clinica_ID_NombreAsync(string nombre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSselectEmpleado", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet WSselectEmpleado();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSselectEmpleado", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> WSselectEmpleadoAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSinsertEmpleado", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string WSinsertEmpleado(int id_clinica, string nombre_empleado, string apellido_empleado, string dpi, int nit, string direccion, string correo, int no_telelefono);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSinsertEmpleado", ReplyAction="*")]
+        System.Threading.Tasks.Task<string> WSinsertEmpleadoAsync(int id_clinica, string nombre_empleado, string apellido_empleado, string dpi, int nit, string direccion, string correo, int no_telelefono);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSBorrarEmpleado", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void WSBorrarEmpleado(int id_empleados);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSBorrarEmpleado", ReplyAction="*")]
+        System.Threading.Tasks.Task WSBorrarEmpleadoAsync(int id_empleados);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSActualizarEmpleado", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void WSActualizarEmpleado(int id_empleados, int id_clinica, string nombre_empleado, string apellido_empleado, string dpi, int nit, string direccion, string correo, int no_telelefono);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSActualizarEmpleado", ReplyAction="*")]
+        System.Threading.Tasks.Task WSActualizarEmpleadoAsync(int id_empleados, int id_clinica, string nombre_empleado, string apellido_empleado, string dpi, int nit, string direccion, string correo, int no_telelefono);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSBuscar_Empleado_ID", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet WSBuscar_Empleado_ID(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSBuscar_Empleado_ID", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> WSBuscar_Empleado_IDAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSBuscar_Empleado_ID_Nombre", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet WSBuscar_Empleado_ID_Nombre(string nombre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSBuscar_Empleado_ID_Nombre", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> WSBuscar_Empleado_ID_NombreAsync(string nombre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSselectPaciente", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet WSselectPaciente();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSselectPaciente", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> WSselectPacienteAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -207,6 +270,78 @@ namespace ConsumeServicio.WservicioBDD {
         
         public System.Threading.Tasks.Task WSActualizar_ClinicaAsync(int id_clinica, string nombre_clinica, string direccion, string correo, int no_telelefono, int nit) {
             return base.Channel.WSActualizar_ClinicaAsync(id_clinica, nombre_clinica, direccion, correo, no_telelefono, nit);
+        }
+        
+        public System.Data.DataSet WSBuscar_Clinica_ID(int id) {
+            return base.Channel.WSBuscar_Clinica_ID(id);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> WSBuscar_Clinica_IDAsync(int id) {
+            return base.Channel.WSBuscar_Clinica_IDAsync(id);
+        }
+        
+        public System.Data.DataSet WSBuscar_Clinica_ID_Nombre(string nombre) {
+            return base.Channel.WSBuscar_Clinica_ID_Nombre(nombre);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> WSBuscar_Clinica_ID_NombreAsync(string nombre) {
+            return base.Channel.WSBuscar_Clinica_ID_NombreAsync(nombre);
+        }
+        
+        public System.Data.DataSet WSselectEmpleado() {
+            return base.Channel.WSselectEmpleado();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> WSselectEmpleadoAsync() {
+            return base.Channel.WSselectEmpleadoAsync();
+        }
+        
+        public string WSinsertEmpleado(int id_clinica, string nombre_empleado, string apellido_empleado, string dpi, int nit, string direccion, string correo, int no_telelefono) {
+            return base.Channel.WSinsertEmpleado(id_clinica, nombre_empleado, apellido_empleado, dpi, nit, direccion, correo, no_telelefono);
+        }
+        
+        public System.Threading.Tasks.Task<string> WSinsertEmpleadoAsync(int id_clinica, string nombre_empleado, string apellido_empleado, string dpi, int nit, string direccion, string correo, int no_telelefono) {
+            return base.Channel.WSinsertEmpleadoAsync(id_clinica, nombre_empleado, apellido_empleado, dpi, nit, direccion, correo, no_telelefono);
+        }
+        
+        public void WSBorrarEmpleado(int id_empleados) {
+            base.Channel.WSBorrarEmpleado(id_empleados);
+        }
+        
+        public System.Threading.Tasks.Task WSBorrarEmpleadoAsync(int id_empleados) {
+            return base.Channel.WSBorrarEmpleadoAsync(id_empleados);
+        }
+        
+        public void WSActualizarEmpleado(int id_empleados, int id_clinica, string nombre_empleado, string apellido_empleado, string dpi, int nit, string direccion, string correo, int no_telelefono) {
+            base.Channel.WSActualizarEmpleado(id_empleados, id_clinica, nombre_empleado, apellido_empleado, dpi, nit, direccion, correo, no_telelefono);
+        }
+        
+        public System.Threading.Tasks.Task WSActualizarEmpleadoAsync(int id_empleados, int id_clinica, string nombre_empleado, string apellido_empleado, string dpi, int nit, string direccion, string correo, int no_telelefono) {
+            return base.Channel.WSActualizarEmpleadoAsync(id_empleados, id_clinica, nombre_empleado, apellido_empleado, dpi, nit, direccion, correo, no_telelefono);
+        }
+        
+        public System.Data.DataSet WSBuscar_Empleado_ID(int id) {
+            return base.Channel.WSBuscar_Empleado_ID(id);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> WSBuscar_Empleado_IDAsync(int id) {
+            return base.Channel.WSBuscar_Empleado_IDAsync(id);
+        }
+        
+        public System.Data.DataSet WSBuscar_Empleado_ID_Nombre(string nombre) {
+            return base.Channel.WSBuscar_Empleado_ID_Nombre(nombre);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> WSBuscar_Empleado_ID_NombreAsync(string nombre) {
+            return base.Channel.WSBuscar_Empleado_ID_NombreAsync(nombre);
+        }
+        
+        public System.Data.DataSet WSselectPaciente() {
+            return base.Channel.WSselectPaciente();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> WSselectPacienteAsync() {
+            return base.Channel.WSselectPacienteAsync();
         }
     }
 }

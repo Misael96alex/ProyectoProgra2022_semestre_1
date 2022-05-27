@@ -20,8 +20,8 @@
 			<ul>
 				<li><a href="https://localhost:44321/PaginasUsuario/menuUsuario.aspx">Usuarios</a></li>
 				<li><a href="https://localhost:44321/PaginasClinica/menuClinica.aspx">Clinicas</a></li>
-				<li><a href="#">Empleados</a></li>
-                <li><a href="#">Pacientes</a></li>
+				<li><a href="https://localhost:44321/PaginasEmpleados/menuEmpleado.aspx">Empleados</a></li>
+                <li><a href="https://localhost:44321/PaginasPacientes/menuPaciente.aspx">Pacientes</a></li>
                 <li><a href="#">Medicamentos</a></li>
                 <li><a href="#">Enfermedad</a></li>
                 <li><a href="#">Registros Medicos</a></li>

@@ -190,6 +190,173 @@
       <s:element name="WSActualizar_ClinicaResponse">
         <s:complexType />
       </s:element>
+      <s:element name="WSBuscar_Clinica_ID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSBuscar_Clinica_IDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSBuscar_Clinica_IDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSBuscar_Clinica_ID_Nombre">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSBuscar_Clinica_ID_NombreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSBuscar_Clinica_ID_NombreResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSselectEmpleado">
+        <s:complexType />
+      </s:element>
+      <s:element name="WSselectEmpleadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSselectEmpleadoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSinsertEmpleado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_clinica" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre_empleado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apellido_empleado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dpi" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nit" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="direccion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="correo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="no_telelefono" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSinsertEmpleadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSinsertEmpleadoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSBorrarEmpleado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_empleados" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSBorrarEmpleadoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="WSActualizarEmpleado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_empleados" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="id_clinica" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre_empleado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apellido_empleado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dpi" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nit" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="direccion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="correo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="no_telelefono" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSActualizarEmpleadoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="WSBuscar_Empleado_ID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSBuscar_Empleado_IDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSBuscar_Empleado_IDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSBuscar_Empleado_ID_Nombre">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSBuscar_Empleado_ID_NombreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSBuscar_Empleado_ID_NombreResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSselectPaciente">
+        <s:complexType />
+      </s:element>
+      <s:element name="WSselectPacienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSselectPacienteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="WSselect_UsuarioSoapIn">
@@ -258,6 +425,60 @@
   <wsdl:message name="WSActualizar_ClinicaSoapOut">
     <wsdl:part name="parameters" element="tns:WSActualizar_ClinicaResponse" />
   </wsdl:message>
+  <wsdl:message name="WSBuscar_Clinica_IDSoapIn">
+    <wsdl:part name="parameters" element="tns:WSBuscar_Clinica_ID" />
+  </wsdl:message>
+  <wsdl:message name="WSBuscar_Clinica_IDSoapOut">
+    <wsdl:part name="parameters" element="tns:WSBuscar_Clinica_IDResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSBuscar_Clinica_ID_NombreSoapIn">
+    <wsdl:part name="parameters" element="tns:WSBuscar_Clinica_ID_Nombre" />
+  </wsdl:message>
+  <wsdl:message name="WSBuscar_Clinica_ID_NombreSoapOut">
+    <wsdl:part name="parameters" element="tns:WSBuscar_Clinica_ID_NombreResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSselectEmpleadoSoapIn">
+    <wsdl:part name="parameters" element="tns:WSselectEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="WSselectEmpleadoSoapOut">
+    <wsdl:part name="parameters" element="tns:WSselectEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSinsertEmpleadoSoapIn">
+    <wsdl:part name="parameters" element="tns:WSinsertEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="WSinsertEmpleadoSoapOut">
+    <wsdl:part name="parameters" element="tns:WSinsertEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSBorrarEmpleadoSoapIn">
+    <wsdl:part name="parameters" element="tns:WSBorrarEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="WSBorrarEmpleadoSoapOut">
+    <wsdl:part name="parameters" element="tns:WSBorrarEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSActualizarEmpleadoSoapIn">
+    <wsdl:part name="parameters" element="tns:WSActualizarEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="WSActualizarEmpleadoSoapOut">
+    <wsdl:part name="parameters" element="tns:WSActualizarEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSBuscar_Empleado_IDSoapIn">
+    <wsdl:part name="parameters" element="tns:WSBuscar_Empleado_ID" />
+  </wsdl:message>
+  <wsdl:message name="WSBuscar_Empleado_IDSoapOut">
+    <wsdl:part name="parameters" element="tns:WSBuscar_Empleado_IDResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSBuscar_Empleado_ID_NombreSoapIn">
+    <wsdl:part name="parameters" element="tns:WSBuscar_Empleado_ID_Nombre" />
+  </wsdl:message>
+  <wsdl:message name="WSBuscar_Empleado_ID_NombreSoapOut">
+    <wsdl:part name="parameters" element="tns:WSBuscar_Empleado_ID_NombreResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSselectPacienteSoapIn">
+    <wsdl:part name="parameters" element="tns:WSselectPaciente" />
+  </wsdl:message>
+  <wsdl:message name="WSselectPacienteSoapOut">
+    <wsdl:part name="parameters" element="tns:WSselectPacienteResponse" />
+  </wsdl:message>
   <wsdl:portType name="WebServiceBDDSoap">
     <wsdl:operation name="WSselect_Usuario">
       <wsdl:input message="tns:WSselect_UsuarioSoapIn" />
@@ -302,6 +523,42 @@
     <wsdl:operation name="WSActualizar_Clinica">
       <wsdl:input message="tns:WSActualizar_ClinicaSoapIn" />
       <wsdl:output message="tns:WSActualizar_ClinicaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSBuscar_Clinica_ID">
+      <wsdl:input message="tns:WSBuscar_Clinica_IDSoapIn" />
+      <wsdl:output message="tns:WSBuscar_Clinica_IDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSBuscar_Clinica_ID_Nombre">
+      <wsdl:input message="tns:WSBuscar_Clinica_ID_NombreSoapIn" />
+      <wsdl:output message="tns:WSBuscar_Clinica_ID_NombreSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSselectEmpleado">
+      <wsdl:input message="tns:WSselectEmpleadoSoapIn" />
+      <wsdl:output message="tns:WSselectEmpleadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSinsertEmpleado">
+      <wsdl:input message="tns:WSinsertEmpleadoSoapIn" />
+      <wsdl:output message="tns:WSinsertEmpleadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSBorrarEmpleado">
+      <wsdl:input message="tns:WSBorrarEmpleadoSoapIn" />
+      <wsdl:output message="tns:WSBorrarEmpleadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSActualizarEmpleado">
+      <wsdl:input message="tns:WSActualizarEmpleadoSoapIn" />
+      <wsdl:output message="tns:WSActualizarEmpleadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSBuscar_Empleado_ID">
+      <wsdl:input message="tns:WSBuscar_Empleado_IDSoapIn" />
+      <wsdl:output message="tns:WSBuscar_Empleado_IDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSBuscar_Empleado_ID_Nombre">
+      <wsdl:input message="tns:WSBuscar_Empleado_ID_NombreSoapIn" />
+      <wsdl:output message="tns:WSBuscar_Empleado_ID_NombreSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSselectPaciente">
+      <wsdl:input message="tns:WSselectPacienteSoapIn" />
+      <wsdl:output message="tns:WSselectPacienteSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WebServiceBDDSoap" type="tns:WebServiceBDDSoap">
@@ -405,6 +662,87 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="WSBuscar_Clinica_ID">
+      <soap:operation soapAction="http://tempuri.org/WSBuscar_Clinica_ID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSBuscar_Clinica_ID_Nombre">
+      <soap:operation soapAction="http://tempuri.org/WSBuscar_Clinica_ID_Nombre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSselectEmpleado">
+      <soap:operation soapAction="http://tempuri.org/WSselectEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSinsertEmpleado">
+      <soap:operation soapAction="http://tempuri.org/WSinsertEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSBorrarEmpleado">
+      <soap:operation soapAction="http://tempuri.org/WSBorrarEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSActualizarEmpleado">
+      <soap:operation soapAction="http://tempuri.org/WSActualizarEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSBuscar_Empleado_ID">
+      <soap:operation soapAction="http://tempuri.org/WSBuscar_Empleado_ID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSBuscar_Empleado_ID_Nombre">
+      <soap:operation soapAction="http://tempuri.org/WSBuscar_Empleado_ID_Nombre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSselectPaciente">
+      <soap:operation soapAction="http://tempuri.org/WSselectPaciente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WebServiceBDDSoap12" type="tns:WebServiceBDDSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -500,6 +838,87 @@
     </wsdl:operation>
     <wsdl:operation name="WSActualizar_Clinica">
       <soap12:operation soapAction="http://tempuri.org/WSActualizar_Clinica" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSBuscar_Clinica_ID">
+      <soap12:operation soapAction="http://tempuri.org/WSBuscar_Clinica_ID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSBuscar_Clinica_ID_Nombre">
+      <soap12:operation soapAction="http://tempuri.org/WSBuscar_Clinica_ID_Nombre" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSselectEmpleado">
+      <soap12:operation soapAction="http://tempuri.org/WSselectEmpleado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSinsertEmpleado">
+      <soap12:operation soapAction="http://tempuri.org/WSinsertEmpleado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSBorrarEmpleado">
+      <soap12:operation soapAction="http://tempuri.org/WSBorrarEmpleado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSActualizarEmpleado">
+      <soap12:operation soapAction="http://tempuri.org/WSActualizarEmpleado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSBuscar_Empleado_ID">
+      <soap12:operation soapAction="http://tempuri.org/WSBuscar_Empleado_ID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSBuscar_Empleado_ID_Nombre">
+      <soap12:operation soapAction="http://tempuri.org/WSBuscar_Empleado_ID_Nombre" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSselectPaciente">
+      <soap12:operation soapAction="http://tempuri.org/WSselectPaciente" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

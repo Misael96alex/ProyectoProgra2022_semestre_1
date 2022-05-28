@@ -21,19 +21,29 @@ namespace ConsumeServicio.PaginasMedicas
                 id_paciente.DataValueField = "ID";
                 id_paciente.DataBind();
 
-                WservicioBDD.WebServiceBDDSoapClient ws1 = new WservicioBDD.WebServiceBDDSoapClient();
                 DataSet ds1 = ws.WSselect_Clinica();
                 id_clinica.DataSource = ds1;
                 id_clinica.DataTextField = "CLINICA";
                 id_clinica.DataValueField = "ID";
                 id_clinica.DataBind();
 
-                WservicioBDD.WebServiceBDDSoapClient ws2 = new WservicioBDD.WebServiceBDDSoapClient();
                 DataSet ds2 = ws.WSselect_Usuario();
                 usuario_creador.DataSource = ds2;
                 usuario_creador.DataTextField = "NOMBRE_USUARIO";
                 usuario_creador.DataValueField = "ID";
                 usuario_creador.DataBind();
+
+                DataSet ds3 = ws.WSselectEnfermedad();
+                diagnostico.DataSource = ds3;
+                diagnostico.DataTextField = "ENFERMEDAD";
+                diagnostico.DataValueField = "ID";
+                diagnostico.DataBind();
+
+                DataSet ds4 = ws.WSselectMedicamento();
+                medicamentos.DataSource = ds4;
+                medicamentos.DataTextField = "DESCRIPCION";
+                medicamentos.DataValueField = "ID";
+                medicamentos.DataBind();
             }
         }
 
@@ -43,6 +53,11 @@ namespace ConsumeServicio.PaginasMedicas
         }
 
         protected void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
         {
 
         }

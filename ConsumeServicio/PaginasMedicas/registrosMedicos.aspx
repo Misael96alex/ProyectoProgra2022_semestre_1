@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <LINK REL=StyleSheet HREF="registrosMedicos.css" TYPE="text/css"/>
+    <link rel="StyleSheet" href="registrosMedicos.css" type="text/css"/>
     <title></title>
 </head>
 <body>
@@ -46,8 +46,8 @@
                     </asp:DropDownList>
 					<asp:Label class="subtitulo" runat="server" Text="Fecha de cita"></asp:Label>
 					<asp:TextBox ID="fecha" runat="server" placeholder="Fecha de Cita"  Type="datetime-local"></asp:TextBox>
-					<asp:TextBox ID="costo" runat="server" placeholder="Costo" ></asp:TextBox>
-					<asp:TextBox ID="no_consultorio" runat="server" placeholder="Numero de Consultorio"  ></asp:TextBox>
+					<asp:TextBox ID="costo" runat="server" placeholder="Costo" type="number" step="any" ></asp:TextBox>
+					<asp:TextBox ID="no_consultorio" runat="server" placeholder="Numero de Consultorio"  type="number" ></asp:TextBox>
 					<asp:TextBox ID="forma_pago" runat="server" placeholder="Forma de Pago"  ></asp:TextBox>
 					<asp:Button ID="agregar" class="botones btn" runat="server" Text="Agendar Cita" Width="288px" OnClick="agregar_Click" />
 					<asp:Label ID="salidaLabel" runat="server" Text=" " ForeColor="White"></asp:Label>
@@ -59,12 +59,34 @@
             <center>
             <asp:Label class="titulo" runat="server" Text="Consultas"></asp:Label>
 				<div class="agregar">
-					<asp:TextBox ID="TextBox1" runat="server" placeholder="Id"  type="number"></asp:TextBox>
-					<asp:TextBox ID="TextBox2" runat="server" placeholder="Nombre Clinica" ></asp:TextBox>
-					<asp:TextBox ID="TextBox3" runat="server" placeholder="Direccion" ></asp:TextBox>
-					<asp:TextBox ID="TextBox4" runat="server" placeholder="Correo"   ></asp:TextBox>
-					<asp:TextBox ID="TextBox5" runat="server" placeholder="Telefono"  type="number"></asp:TextBox>
-					<asp:TextBox ID="TextBox6" runat="server" placeholder="Nit"  type="number" ></asp:TextBox>
+					<asp:TextBox ID="id_reg_consul" runat="server" placeholder="Id a Buscar"  type="number"></asp:TextBox>
+
+					<asp:Button ID="Button2" class="botones btn" runat="server" Text="Buscar Cita" Width="288px" OnClick="Button2_Click"  />
+					
+					<asp:Label class="subtitulo" runat="server" Text="Paciente"></asp:Label>
+					<asp:DropDownList Class="clinica" ID="id_paciente2" runat="server" Height="54px" style="margin-left: 0px" Width="300px" margin-bottom="10px">
+                    </asp:DropDownList>
+
+					<asp:Label class="subtitulo" runat="server" Text="Fecha de Consulta"></asp:Label>
+					<asp:TextBox ID="fecha_creacion" runat="server" placeholder="Fecha de Consulta"  Type="datetime-local"></asp:TextBox>
+					
+					<asp:Label class="subtitulo" runat="server" Text="Usuario que agendo la cita"></asp:Label>
+					<asp:DropDownList Class="clinica" ID="usuario_creador2" runat="server" Height="54px" style="margin-left: 0px" Width="300px" margin-bottom="10px">
+                    </asp:DropDownList>
+
+					<asp:TextBox ID="medico" runat="server" placeholder="Nombre Medico" ></asp:TextBox>
+
+					<asp:Label class="subtitulo" runat="server" Text="diagnostico"></asp:Label>
+					<asp:DropDownList Class="clinica" ID="diagnostico" runat="server" Height="54px" style="margin-left: 0px" Width="300px" margin-bottom="10px">
+                    </asp:DropDownList>
+
+					<asp:Label class="subtitulo" runat="server" Text="medicamentos"></asp:Label>
+					<asp:DropDownList Class="clinica" ID="medicamentos" runat="server" Height="54px" style="margin-left: 0px" Width="300px" margin-bottom="10px">
+                    </asp:DropDownList>
+
+
+					<asp:TextBox ID="estudios" runat="server" placeholder="Estudios/ Observaciones" ></asp:TextBox>
+					
 					<asp:Button ID="Button1" class="botones btn" runat="server" Text="Terminar Consulta" Width="288px" OnClick="Button1_Click" />
 					<asp:Label ID="Label1" runat="server" Text=" " ForeColor="White"></asp:Label>
 				

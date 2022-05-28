@@ -565,7 +565,38 @@ namespace ServicioWebBDD_A
             }
         }
 
+        /*
+         * *******************************************************
+         * *                REPORTERIA                         * *
+         * *******************************************************
+         * */
 
+        [WebMethod]
+        public DataSet WSBusquedaPacienteConsulta(string paciente)
+        {
 
+            MySqlConnection conn = new MySqlConnection();
+            conn.ConnectionString = CadenaConexion;
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT concat(p.nombre_paciente,' ',p.apellido_paciente) PACIENTE, p.tipo_sangre TIPO_SANGRE, c.id_consulta ID_CONSULTA, clI.nombre_clinica CLINICA , c.medico DOCTOR, e.nombre_enfermedad DIAGNOSTICO, e.tipo_enfermedad TIPO_DIAGNOSTICO, c.estudios ESTUDIOS_OBSERVACIONES, me.descripcion MEDICAMENTO, rc.fecha_creacion FECHA_CONSULTA, ci.costo COSTO_CONSULTA, ci.forma_pago FORMA_DE_PAGO "+
+                " FROM consulta c join registro_consultas rc on rc.id_reg_consul = c.id_reg_consul join paciente p on p.id_paciente = rc.id_paciente join usuario u on u.id_usuario = rc.usuario_creador join enfermedad e on e.id_enfermedad = rc.id_enfermedad join registro_citas rci on rci.id_reg_cita = rc.id_reg_consul join cita ci on ci.id_reg_cita = rci.id_reg_cita join clinica cli on cli.id_clinica = rci.id_clinica join medicamentos me on me.id_medicamento = rc.id_medicamento "+
+                " where concat(p.nombre_paciente, ' ', p.apellido_paciente) like '%"+ paciente + "%' ; ", conn);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+
+        }
+
+        [WebMethod]
+        public DataSet WSBusquedaCitas( )
+        {
+
+            MySqlConnection conn = new MySqlConnection();
+            conn.ConnectionString = CadenaConexion;
+            MySqlDataAdapter da = new MySqlDataAdapter("select ci.id_cita ID_CITA_RESERVADA ,ci.fecha FECHA_CITA_RESERVADA ,cl.nombre_clinica CLINICA ,ci.no_consultorio NUMERO_CONSULTORIO ,concat(p.nombre_paciente,' ',p.apellido_paciente) PACIENTE from cita ci join registro_citas rc on rc.id_reg_cita = ci.id_reg_cita join paciente p on p.id_paciente = rc.id_paciente join clinica cl on cl.id_clinica = rc.id_clinica;", conn);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+
+        }
     }
 }

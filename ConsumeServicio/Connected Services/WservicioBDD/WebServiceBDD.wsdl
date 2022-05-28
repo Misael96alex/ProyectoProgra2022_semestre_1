@@ -518,6 +518,44 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="WSBusquedaPacienteConsulta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="paciente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSBusquedaPacienteConsultaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSBusquedaPacienteConsultaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSBusquedaCitas">
+        <s:complexType />
+      </s:element>
+      <s:element name="WSBusquedaCitasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSBusquedaCitasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="WSselect_UsuarioSoapIn">
@@ -688,6 +726,18 @@
   <wsdl:message name="WSTerminarConsultaSoapOut">
     <wsdl:part name="parameters" element="tns:WSTerminarConsultaResponse" />
   </wsdl:message>
+  <wsdl:message name="WSBusquedaPacienteConsultaSoapIn">
+    <wsdl:part name="parameters" element="tns:WSBusquedaPacienteConsulta" />
+  </wsdl:message>
+  <wsdl:message name="WSBusquedaPacienteConsultaSoapOut">
+    <wsdl:part name="parameters" element="tns:WSBusquedaPacienteConsultaResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSBusquedaCitasSoapIn">
+    <wsdl:part name="parameters" element="tns:WSBusquedaCitas" />
+  </wsdl:message>
+  <wsdl:message name="WSBusquedaCitasSoapOut">
+    <wsdl:part name="parameters" element="tns:WSBusquedaCitasResponse" />
+  </wsdl:message>
   <wsdl:portType name="WebServiceBDDSoap">
     <wsdl:operation name="WSselect_Usuario">
       <wsdl:input message="tns:WSselect_UsuarioSoapIn" />
@@ -800,6 +850,14 @@
     <wsdl:operation name="WSTerminarConsulta">
       <wsdl:input message="tns:WSTerminarConsultaSoapIn" />
       <wsdl:output message="tns:WSTerminarConsultaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSBusquedaPacienteConsulta">
+      <wsdl:input message="tns:WSBusquedaPacienteConsultaSoapIn" />
+      <wsdl:output message="tns:WSBusquedaPacienteConsultaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSBusquedaCitas">
+      <wsdl:input message="tns:WSBusquedaCitasSoapIn" />
+      <wsdl:output message="tns:WSBusquedaCitasSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WebServiceBDDSoap" type="tns:WebServiceBDDSoap">
@@ -1056,6 +1114,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="WSBusquedaPacienteConsulta">
+      <soap:operation soapAction="http://tempuri.org/WSBusquedaPacienteConsulta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSBusquedaCitas">
+      <soap:operation soapAction="http://tempuri.org/WSBusquedaCitas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WebServiceBDDSoap12" type="tns:WebServiceBDDSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -1304,6 +1380,24 @@
     </wsdl:operation>
     <wsdl:operation name="WSTerminarConsulta">
       <soap12:operation soapAction="http://tempuri.org/WSTerminarConsulta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSBusquedaPacienteConsulta">
+      <soap12:operation soapAction="http://tempuri.org/WSBusquedaPacienteConsulta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSBusquedaCitas">
+      <soap12:operation soapAction="http://tempuri.org/WSBusquedaCitas" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

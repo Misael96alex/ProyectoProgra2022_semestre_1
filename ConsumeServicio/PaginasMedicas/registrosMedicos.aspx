@@ -24,7 +24,7 @@
                 <li><a href="https://localhost:44321/PaginasMedicamentos/menuMedicamentos.aspx">Medicamentos</a></li>
                 <li><a href="https://localhost:44321/PaginasEnfermedades/menuEnfermedades.aspx">Enfermedad</a></li>
                 <li><a href="https://localhost:44321/PaginasMedicas/registrosMedicos.aspx">Registros Medicos</a></li>
-                <li><a href="#">Reportería</a></li>
+                <li><a href="https://localhost:44321/PaginasReportes/reporte.aspx">Reportería</a></li>
 			</ul>
 		</nav><!-- / nav -->
 

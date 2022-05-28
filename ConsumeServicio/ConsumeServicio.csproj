@@ -97,6 +97,8 @@
     <Content Include="PaginasPacientes\agregarPaciente.css" />
     <Content Include="PaginasPacientes\menuPaciente.aspx" />
     <Content Include="PaginasPacientes\menuPaciente.css" />
+    <Content Include="PaginasReportes\reporte.aspx" />
+    <Content Include="PaginasReportes\reporte.css" />
     <Content Include="PaginasUsuario\agregarUsuario.css" />
     <Content Include="PaginasUsuario\borrarUsuario.aspx" />
     <Content Include="PaginasUsuario\borrarUsuario.css" />
@@ -222,6 +224,13 @@
     </Compile>
     <Compile Include="PaginasPacientes\menuPaciente.aspx.designer.cs">
       <DependentUpon>menuPaciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginasReportes\reporte.aspx.cs">
+      <DependentUpon>reporte.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginasReportes\reporte.aspx.designer.cs">
+      <DependentUpon>reporte.aspx</DependentUpon>
     </Compile>
     <Compile Include="PaginasUsuario\borrarUsuario.aspx.cs">
       <DependentUpon>borrarUsuario.aspx</DependentUpon>

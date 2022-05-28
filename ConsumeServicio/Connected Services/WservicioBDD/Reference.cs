@@ -211,6 +211,20 @@ namespace ConsumeServicio.WservicioBDD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSTerminarConsulta", ReplyAction="*")]
         System.Threading.Tasks.Task<string> WSTerminarConsultaAsync(string id_reg_consul, string id_paciente, string fecha_creacion, string id_medicamento, string id_enfermedad, string medico, string diagnostico, string medicamentos, string estudios, string usuario_creador);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSBusquedaPacienteConsulta", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet WSBusquedaPacienteConsulta(string paciente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSBusquedaPacienteConsulta", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> WSBusquedaPacienteConsultaAsync(string paciente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSBusquedaCitas", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet WSBusquedaCitas();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSBusquedaCitas", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> WSBusquedaCitasAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -462,6 +476,22 @@ namespace ConsumeServicio.WservicioBDD {
         
         public System.Threading.Tasks.Task<string> WSTerminarConsultaAsync(string id_reg_consul, string id_paciente, string fecha_creacion, string id_medicamento, string id_enfermedad, string medico, string diagnostico, string medicamentos, string estudios, string usuario_creador) {
             return base.Channel.WSTerminarConsultaAsync(id_reg_consul, id_paciente, fecha_creacion, id_medicamento, id_enfermedad, medico, diagnostico, medicamentos, estudios, usuario_creador);
+        }
+        
+        public System.Data.DataSet WSBusquedaPacienteConsulta(string paciente) {
+            return base.Channel.WSBusquedaPacienteConsulta(paciente);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> WSBusquedaPacienteConsultaAsync(string paciente) {
+            return base.Channel.WSBusquedaPacienteConsultaAsync(paciente);
+        }
+        
+        public System.Data.DataSet WSBusquedaCitas() {
+            return base.Channel.WSBusquedaCitas();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> WSBusquedaCitasAsync() {
+            return base.Channel.WSBusquedaCitasAsync();
         }
     }
 }

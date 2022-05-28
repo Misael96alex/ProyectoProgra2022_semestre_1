@@ -462,7 +462,7 @@ namespace ServicioWebBDD_A
                 conn.ConnectionString = CadenaConexion;
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.CommandText = "INSERT INTO PACIENTE ( id_enfermedad, nombre_enfermedad, tipo_enfermedad, nivel_contagio) VALUES ( '" + id_enfermedad + "', '" + nombre_enfermedad + "', '" + tipo_enfermedad + "', '" + nivel_contagio +  "');";
+                cmd.CommandText = "INSERT INTO enfermedad ( id_enfermedad, nombre_enfermedad, tipo_enfermedad, nivel_contagio) VALUES ( '" + id_enfermedad + "', '" + nombre_enfermedad + "', '" + tipo_enfermedad + "', '" + nivel_contagio +  "');";
                 cmd.Connection = conn;
                 conn.Open();
                 cmd.ExecuteNonQuery();

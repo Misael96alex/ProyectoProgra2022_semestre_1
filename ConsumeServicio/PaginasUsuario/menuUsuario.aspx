@@ -22,9 +22,9 @@
 				<li><a href="https://localhost:44321/PaginasClinica/menuClinica.aspx">Clinicas</a></li>
 				<li><a href="https://localhost:44321/PaginasEmpleados/menuEmpleado.aspx">Empleados</a></li>
                 <li><a href="https://localhost:44321/PaginasPacientes/menuPaciente.aspx">Pacientes</a></li>
-                <li><a href="#">Medicamentos</a></li>
-                <li><a href="#">Enfermedad</a></li>
-                <li><a href="#">Registros Medicos</a></li>
+                <li><a href="https://localhost:44321/PaginasMedicamentos/menuMedicamentos.aspx">Medicamentos</a></li>
+                <li><a href="https://localhost:44321/PaginasEnfermedades/menuEnfermedades.aspx">Enfermedad</a></li>
+                <li><a href="https://localhost:44321/PaginasMedicas/registrosMedicos.aspx">Registros Medicos</a></li>
                 <li><a href="#">Reportería</a></li>
 			</ul>
 		</nav><!-- / nav -->

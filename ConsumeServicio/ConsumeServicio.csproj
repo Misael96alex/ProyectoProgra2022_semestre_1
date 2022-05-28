@@ -83,6 +83,16 @@
     <Content Include="PaginasEmpleados\agregarEmpleado.css" />
     <Content Include="PaginasEmpleados\menuEmpleado.aspx" />
     <Content Include="PaginasEmpleados\menuEmpleado.css" />
+    <Content Include="PaginasEnfermedades\agegarEnfermedades.aspx" />
+    <Content Include="PaginasEnfermedades\agegarEnfermedades.css" />
+    <Content Include="PaginasEnfermedades\menuEnfermedades.aspx" />
+    <Content Include="PaginasEnfermedades\menuEnfermedades.css" />
+    <Content Include="PaginasMedicamentos\agregarMedicamentos.aspx" />
+    <Content Include="PaginasMedicamentos\agregarMedicamentos.css" />
+    <Content Include="PaginasMedicamentos\menuMedicamentos.aspx" />
+    <Content Include="PaginasMedicamentos\menuMedicamentos.css" />
+    <Content Include="PaginasMedicas\registrosMedicos.aspx" />
+    <Content Include="PaginasMedicas\registrosMedicos.css" />
     <Content Include="PaginasPacientes\agregarPaciente.aspx" />
     <Content Include="PaginasPacientes\agregarPaciente.css" />
     <Content Include="PaginasPacientes\menuPaciente.aspx" />
@@ -163,6 +173,41 @@
     </Compile>
     <Compile Include="PaginasEmpleados\menuEmpleado.aspx.designer.cs">
       <DependentUpon>menuEmpleado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginasEnfermedades\agegarEnfermedades.aspx.cs">
+      <DependentUpon>agegarEnfermedades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginasEnfermedades\agegarEnfermedades.aspx.designer.cs">
+      <DependentUpon>agegarEnfermedades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginasEnfermedades\menuEnfermedades.aspx.cs">
+      <DependentUpon>menuEnfermedades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginasEnfermedades\menuEnfermedades.aspx.designer.cs">
+      <DependentUpon>menuEnfermedades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginasMedicamentos\agregarMedicamentos.aspx.cs">
+      <DependentUpon>agregarMedicamentos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginasMedicamentos\agregarMedicamentos.aspx.designer.cs">
+      <DependentUpon>agregarMedicamentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginasMedicamentos\menuMedicamentos.aspx.cs">
+      <DependentUpon>menuMedicamentos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginasMedicamentos\menuMedicamentos.aspx.designer.cs">
+      <DependentUpon>menuMedicamentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginasMedicas\registrosMedicos.aspx.cs">
+      <DependentUpon>registrosMedicos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginasMedicas\registrosMedicos.aspx.designer.cs">
+      <DependentUpon>registrosMedicos.aspx</DependentUpon>
     </Compile>
     <Compile Include="PaginasPacientes\agregarPaciente.aspx.cs">
       <DependentUpon>agregarPaciente.aspx</DependentUpon>

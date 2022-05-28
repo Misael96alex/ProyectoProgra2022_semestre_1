@@ -453,6 +453,71 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="WSinsertAgendarCita">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_reg_cita" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id_paciente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id_clinica" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="usuario_creador" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fecha" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="costo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="no_consultorio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="forma_pago" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSinsertAgendarCitaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSinsertAgendarCitaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSBuscarCita">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSBuscarCitaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSBuscarCitaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSTerminarConsulta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_reg_consul" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id_paciente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fecha_creacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id_medicamento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id_enfermedad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="medico" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="diagnostico" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="medicamentos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="estudios" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="usuario_creador" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSTerminarConsultaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSTerminarConsultaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="WSselect_UsuarioSoapIn">
@@ -605,6 +670,24 @@
   <wsdl:message name="WSinsertEnfermedadSoapOut">
     <wsdl:part name="parameters" element="tns:WSinsertEnfermedadResponse" />
   </wsdl:message>
+  <wsdl:message name="WSinsertAgendarCitaSoapIn">
+    <wsdl:part name="parameters" element="tns:WSinsertAgendarCita" />
+  </wsdl:message>
+  <wsdl:message name="WSinsertAgendarCitaSoapOut">
+    <wsdl:part name="parameters" element="tns:WSinsertAgendarCitaResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSBuscarCitaSoapIn">
+    <wsdl:part name="parameters" element="tns:WSBuscarCita" />
+  </wsdl:message>
+  <wsdl:message name="WSBuscarCitaSoapOut">
+    <wsdl:part name="parameters" element="tns:WSBuscarCitaResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSTerminarConsultaSoapIn">
+    <wsdl:part name="parameters" element="tns:WSTerminarConsulta" />
+  </wsdl:message>
+  <wsdl:message name="WSTerminarConsultaSoapOut">
+    <wsdl:part name="parameters" element="tns:WSTerminarConsultaResponse" />
+  </wsdl:message>
   <wsdl:portType name="WebServiceBDDSoap">
     <wsdl:operation name="WSselect_Usuario">
       <wsdl:input message="tns:WSselect_UsuarioSoapIn" />
@@ -705,6 +788,18 @@
     <wsdl:operation name="WSinsertEnfermedad">
       <wsdl:input message="tns:WSinsertEnfermedadSoapIn" />
       <wsdl:output message="tns:WSinsertEnfermedadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSinsertAgendarCita">
+      <wsdl:input message="tns:WSinsertAgendarCitaSoapIn" />
+      <wsdl:output message="tns:WSinsertAgendarCitaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSBuscarCita">
+      <wsdl:input message="tns:WSBuscarCitaSoapIn" />
+      <wsdl:output message="tns:WSBuscarCitaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSTerminarConsulta">
+      <wsdl:input message="tns:WSTerminarConsultaSoapIn" />
+      <wsdl:output message="tns:WSTerminarConsultaSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WebServiceBDDSoap" type="tns:WebServiceBDDSoap">
@@ -934,6 +1029,33 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="WSinsertAgendarCita">
+      <soap:operation soapAction="http://tempuri.org/WSinsertAgendarCita" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSBuscarCita">
+      <soap:operation soapAction="http://tempuri.org/WSBuscarCita" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSTerminarConsulta">
+      <soap:operation soapAction="http://tempuri.org/WSTerminarConsulta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WebServiceBDDSoap12" type="tns:WebServiceBDDSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -1155,6 +1277,33 @@
     </wsdl:operation>
     <wsdl:operation name="WSinsertEnfermedad">
       <soap12:operation soapAction="http://tempuri.org/WSinsertEnfermedad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSinsertAgendarCita">
+      <soap12:operation soapAction="http://tempuri.org/WSinsertAgendarCita" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSBuscarCita">
+      <soap12:operation soapAction="http://tempuri.org/WSBuscarCita" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSTerminarConsulta">
+      <soap12:operation soapAction="http://tempuri.org/WSTerminarConsulta" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

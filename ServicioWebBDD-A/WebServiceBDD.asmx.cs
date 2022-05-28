@@ -475,6 +475,96 @@ namespace ServicioWebBDD_A
             }
         }
 
+        /*
+         * *******************************************************
+         * *                REGISTROS MEDICOS                  * *
+         * *******************************************************
+         * */
+
+        [WebMethod]
+        public String WSinsertAgendarCita(string id_reg_cita, string id_paciente, string id_clinica, string usuario_creador, string fecha, string costo, string no_consultorio , string forma_pago)
+        {
+            try
+            {
+                /*primer tabla*/
+                MySqlConnection conn = new MySqlConnection();
+                conn.ConnectionString = CadenaConexion;
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.CommandText = "INSERT INTO registro_citas ( id_reg_cita, id_paciente, id_clinica, usuario_creador) VALUES ( '" + id_reg_cita + "', '" + id_paciente + "', '" + id_clinica + "', '" + usuario_creador + "');";
+                cmd.Connection = conn;
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                /*segunda tabla*/
+                MySqlConnection conn1 = new MySqlConnection();
+                conn1.ConnectionString = CadenaConexion;
+                MySqlCommand cmd1 = new MySqlCommand();
+                cmd1.CommandType = System.Data.CommandType.Text;
+                cmd1.CommandText = "INSERT INTO cita ( id_cita, id_reg_cita, fecha, costo,no_consultorio,forma_pago) VALUES ( '" + id_reg_cita + "', '" + id_reg_cita + "', '" + fecha + "', '" + costo + "', '" + no_consultorio + "', '" + forma_pago + "');";
+                cmd1.Connection = conn1;
+                conn1.Open();
+                cmd1.ExecuteNonQuery();
+                conn1.Close();
+                return "Insercion con exito";
+            }
+            catch (Exception e)
+            {
+                return "error: " + e.Message;
+            }
+        }
+
+        [WebMethod]
+        public DataSet WSBuscarCita(string id)
+        {
+
+            MySqlConnection conn = new MySqlConnection();
+            conn.ConnectionString = CadenaConexion;
+            MySqlDataAdapter da = new MySqlDataAdapter("select (select distinct rc.id_paciente from registro_citas rc where rc.id_reg_cita = c.id_reg_cita) ID_PACIENTE "+
+                ", (select distinct concat(p.nombre_paciente, ' ', p.apellido_paciente) from registro_citas rc, paciente p where rc.id_reg_cita = c.id_reg_cita and p.id_paciente = rc.id_paciente) PACIENTE "+
+                ",(select distinct rc.usuario_creador from registro_citas rc where rc.id_reg_cita = c.id_reg_cita) ID_USUARIO "+
+                ",(select distinct concat(u.nombre_usuario,' ',u.apellido_usuario) from registro_citas rc , usuario u where rc.id_reg_cita = c.id_reg_cita and u.id_usuario = usuario_creador) USUARIO   from cita c "+
+                "where c.id_cita ='"+ id +
+                "' and not exists(select 1 from registro_consultas rr where rr.id_reg_consul = c.id_cita); ", conn);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+
+        }
+
+        [WebMethod]
+        public String WSTerminarConsulta(string id_reg_consul, string id_paciente, string fecha_creacion, string id_medicamento, string id_enfermedad, string medico, string diagnostico, string medicamentos,string estudios,string usuario_creador)
+        {
+            try
+            {
+                /*primer tabla*/
+                MySqlConnection conn = new MySqlConnection();
+                conn.ConnectionString = CadenaConexion;
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.CommandText = "INSERT INTO registro_consultas ( id_reg_consul, id_paciente, fecha_creacion,usuario_creador, id_medicamento,id_enfermedad) VALUES ( '" + id_reg_consul + "', '" + id_paciente + "', '" + fecha_creacion + "', '" + usuario_creador + "', '" + id_medicamento + "', '" + id_enfermedad + "');";
+                cmd.Connection = conn;
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                /*segunda tabla*/
+                MySqlConnection conn1 = new MySqlConnection();
+                conn1.ConnectionString = CadenaConexion;
+                MySqlCommand cmd1 = new MySqlCommand();
+                cmd1.CommandType = System.Data.CommandType.Text;
+                cmd1.CommandText = "INSERT INTO consulta ( id_consulta, id_reg_consul, medico, diagnostico,medicamentos,estudios) VALUES ( '" + id_reg_consul + "', '" + id_reg_consul + "', '" + medico + "', '" + diagnostico + "', '" + medicamentos + "', '" + estudios + "');";
+                cmd1.Connection = conn1;
+                conn1.Open();
+                cmd1.ExecuteNonQuery();
+                conn1.Close();
+                return "Insercion con exito";
+            }
+            catch (Exception e)
+            {
+                return "error: " + e.Message;
+            }
+        }
+
 
 
     }

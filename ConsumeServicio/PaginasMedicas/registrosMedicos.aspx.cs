@@ -49,17 +49,31 @@ namespace ConsumeServicio.PaginasMedicas
 
         protected void agregar_Click(object sender, EventArgs e)
         {
-
+            WservicioBDD.WebServiceBDDSoapClient ws = new WservicioBDD.WebServiceBDDSoapClient();
+            string salida = ws.WSinsertAgendarCita(id_cita.Text, id_paciente.Text, id_clinica.Text, usuario_creador.Text, fecha.Text, costo.Text, no_consultorio.Text, forma_pago.Text);
+            salidaLabel.Text = salida;
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-
+            WservicioBDD.WebServiceBDDSoapClient ws = new WservicioBDD.WebServiceBDDSoapClient();
+            string salida = ws.WSTerminarConsulta(id_reg_consul.Text, id_paciente2.Text, fecha_creacion.Text, medicamentos.Text, diagnostico.Text, medico.Text, diagnostico.Text, medicamentos.Text, estudios.Text, usuario_creador2.Text);
+            salidaLabel.Text = salida;
         }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
+            WservicioBDD.WebServiceBDDSoapClient ws1 = new WservicioBDD.WebServiceBDDSoapClient();
+            DataSet ds = ws1.WSBuscarCita(id_reg_consul.Text);
+            id_paciente2.DataSource = ds;
+            id_paciente2.DataTextField = "PACIENTE";
+            id_paciente2.DataValueField = "ID_PACIENTE";
+            id_paciente2.DataBind();
 
+            usuario_creador2.DataSource = ds;
+            usuario_creador2.DataTextField = "USUARIO";
+            usuario_creador2.DataValueField = "ID_USUARIO";
+            usuario_creador2.DataBind();
         }
     }
 }

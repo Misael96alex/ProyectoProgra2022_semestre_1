@@ -190,6 +190,27 @@ namespace ConsumeServicio.WservicioBDD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSinsertEnfermedad", ReplyAction="*")]
         System.Threading.Tasks.Task<string> WSinsertEnfermedadAsync(int id_enfermedad, string nombre_enfermedad, string tipo_enfermedad, string nivel_contagio);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSinsertAgendarCita", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string WSinsertAgendarCita(string id_reg_cita, string id_paciente, string id_clinica, string usuario_creador, string fecha, string costo, string no_consultorio, string forma_pago);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSinsertAgendarCita", ReplyAction="*")]
+        System.Threading.Tasks.Task<string> WSinsertAgendarCitaAsync(string id_reg_cita, string id_paciente, string id_clinica, string usuario_creador, string fecha, string costo, string no_consultorio, string forma_pago);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSBuscarCita", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet WSBuscarCita(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSBuscarCita", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> WSBuscarCitaAsync(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSTerminarConsulta", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string WSTerminarConsulta(string id_reg_consul, string id_paciente, string fecha_creacion, string id_medicamento, string id_enfermedad, string medico, string diagnostico, string medicamentos, string estudios, string usuario_creador);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WSTerminarConsulta", ReplyAction="*")]
+        System.Threading.Tasks.Task<string> WSTerminarConsultaAsync(string id_reg_consul, string id_paciente, string fecha_creacion, string id_medicamento, string id_enfermedad, string medico, string diagnostico, string medicamentos, string estudios, string usuario_creador);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -417,6 +438,30 @@ namespace ConsumeServicio.WservicioBDD {
         
         public System.Threading.Tasks.Task<string> WSinsertEnfermedadAsync(int id_enfermedad, string nombre_enfermedad, string tipo_enfermedad, string nivel_contagio) {
             return base.Channel.WSinsertEnfermedadAsync(id_enfermedad, nombre_enfermedad, tipo_enfermedad, nivel_contagio);
+        }
+        
+        public string WSinsertAgendarCita(string id_reg_cita, string id_paciente, string id_clinica, string usuario_creador, string fecha, string costo, string no_consultorio, string forma_pago) {
+            return base.Channel.WSinsertAgendarCita(id_reg_cita, id_paciente, id_clinica, usuario_creador, fecha, costo, no_consultorio, forma_pago);
+        }
+        
+        public System.Threading.Tasks.Task<string> WSinsertAgendarCitaAsync(string id_reg_cita, string id_paciente, string id_clinica, string usuario_creador, string fecha, string costo, string no_consultorio, string forma_pago) {
+            return base.Channel.WSinsertAgendarCitaAsync(id_reg_cita, id_paciente, id_clinica, usuario_creador, fecha, costo, no_consultorio, forma_pago);
+        }
+        
+        public System.Data.DataSet WSBuscarCita(string id) {
+            return base.Channel.WSBuscarCita(id);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> WSBuscarCitaAsync(string id) {
+            return base.Channel.WSBuscarCitaAsync(id);
+        }
+        
+        public string WSTerminarConsulta(string id_reg_consul, string id_paciente, string fecha_creacion, string id_medicamento, string id_enfermedad, string medico, string diagnostico, string medicamentos, string estudios, string usuario_creador) {
+            return base.Channel.WSTerminarConsulta(id_reg_consul, id_paciente, fecha_creacion, id_medicamento, id_enfermedad, medico, diagnostico, medicamentos, estudios, usuario_creador);
+        }
+        
+        public System.Threading.Tasks.Task<string> WSTerminarConsultaAsync(string id_reg_consul, string id_paciente, string fecha_creacion, string id_medicamento, string id_enfermedad, string medico, string diagnostico, string medicamentos, string estudios, string usuario_creador) {
+            return base.Channel.WSTerminarConsultaAsync(id_reg_consul, id_paciente, fecha_creacion, id_medicamento, id_enfermedad, medico, diagnostico, medicamentos, estudios, usuario_creador);
         }
     }
 }
